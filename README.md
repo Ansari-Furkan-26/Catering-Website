@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-Here's a detailed description of a **Catering Website** for your **GitHub repository**, explaining the project's goals, structure, and tech stack:
-
----
-
 # Catering Website
 
 ## Description
