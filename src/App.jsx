@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './pages/herosection';
+import LuxuryServices from './pages/LuxuryServices';
 import Footer from './components/Footer';
 import Product from './components/Product';
 import BlogSection from './components/BlogSection';
@@ -24,6 +25,7 @@ export default function Example() {
       <Routes>
         <Route path="/" element={<HeroSection />} />
         <Route path="/ExploreMoment" element={<Gallery />} />
+        <Route path="/luxury-services" element={<LuxuryServices />} />
       </Routes>
       </BrowserRouter>
       <Footer />
