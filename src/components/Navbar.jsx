@@ -1,10 +1,11 @@
 import React from "react";
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Link } from "react-router-dom";  // Import Link from react-router-dom
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Dialog, DialogPanel } from '@headlessui/react';
 
 const navigation = [
   { name: 'About', href: '#' },
-  { name: 'Luxury Service', href: '#' },  
+  { name: 'Luxury Service', href: '/luxury-services' },  // Update href to match the route
   { name: 'Event', href: '#' },
   { name: 'Gallery', href: '#' },
 ];
@@ -31,9 +32,14 @@ const Navbar = ({ mobileMenuOpen, setMobileMenuOpen }) => {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <a key={item.name} href={item.href} className="text-sm/6 font-semibold text-white">
+            <Link
+              key={item.name}
+              to={item.href}
+              className="text-sm/6 font-semibold text-white"
+              onClick={() => setMobileMenuOpen(false)}  // Close the mobile menu when a link is clicked
+            >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -67,13 +73,14 @@ const Navbar = ({ mobileMenuOpen, setMobileMenuOpen }) => {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
-                    href={item.href}
+                    to={item.href}
+                    onClick={() => setMobileMenuOpen(false)}  // Close the menu when a link is clicked
                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
               <div className="py-6">
@@ -81,7 +88,7 @@ const Navbar = ({ mobileMenuOpen, setMobileMenuOpen }) => {
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
-                 Contact Us
+                  Contact Us
                 </a>
               </div>
             </div>
