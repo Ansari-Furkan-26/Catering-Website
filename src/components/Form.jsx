@@ -59,7 +59,7 @@ const CheckoutPage = () => {
               <span className="text-yellow-400">★★★★★</span>
               <span className="text-white text-sm">(46 reviews)</span>
             </div>
-            <button className="bg-blue-600 text-white py-2 px-4 rounded-lg">Add to cart</button>
+            <button className="bg-blue-600 text-white py-2 px-4 rounded-lg">Submit</button>
           </div> */}
         </div>
       </div>
