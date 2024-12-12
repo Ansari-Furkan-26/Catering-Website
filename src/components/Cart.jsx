@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import PackShowcase2 from "./Pack2.jsx";
 
@@ -52,46 +52,41 @@ const Cart = () => {
 
   const [selectedPackage, setSelectedPackage] = useState(null);
   const [selectedPackagePrice, setSelectedPackagePrice] = useState(null);
-  const [selectedHotDrink, setSelectedHotDrink] = useState("");
-  const [selectedColdDrink, setSelectedColdDrink] = useState("");
+  const [selectedDrinks, setSelectedDrinks] = useState([]);
+  const DRINK_PRICE = 200;
 
   const handleAddToCart = (packageNumber, packagePrice) => {
     setSelectedPackage(packageNumber);
     setSelectedPackagePrice(packagePrice);
   };
 
-  const handleHotDrinkChange = (event) => {
-    setSelectedHotDrink(event.target.value);
+  const handleDrinkSelection = (drinkType, drinkName) => {
+    if (!drinkName) return;
+
+    setSelectedDrinks((prevDrinks) => [
+      ...prevDrinks,
+      { type: drinkType, name: drinkName, price: DRINK_PRICE },
+    ]);
   };
 
-  const handleColdDrinkChange = (event) => {
-    setSelectedColdDrink(event.target.value);
+  const removeDrink = (indexToRemove) => {
+    setSelectedDrinks((prevDrinks) =>
+      prevDrinks.filter((_, index) => index !== indexToRemove)
+    );
+  };
+
+  const calculateTotal = () => {
+    const drinksTotal = selectedDrinks.reduce((sum, drink) => sum + drink.price, 0);
+    return (selectedPackagePrice || 0) + drinksTotal;
   };
 
   return (
     <div className="min-h-screen bg-white-100 flex items-center justify-center">
       <div className="max-w-5xl w-full bg-white shadow-lg rounded-lg p-8">
-        <h1 className="text-5xl font-bold text-center mb-8">
-          Cart Summary
-        </h1>
+        <h1 className="text-5xl font-bold text-center mb-8">Cart Summary</h1>
 
         {/* Packages Section */}
         <PackShowcase2 onAddToCart={handleAddToCart} />
-
-        {/* Selected Package Information */}
-        {selectedPackage && selectedPackagePrice && (
-          <div className="border rounded-lg p-4 my-6 bg-gray-50">
-            <h2 className="text-xl font-semibold mb-4">Selected Package</h2>
-            <div className="flex justify-between border-b pb-2">
-              <span className="font-medium">Package Number:</span>
-              <span>{selectedPackage}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="font-medium">Price:</span>
-              <span>{selectedPackagePrice}</span>
-            </div>
-          </div>
-        )}
 
         {/* Drink Selection */}
         <div className="flex justify-between items-center mb-6">
@@ -101,9 +96,8 @@ const Cart = () => {
             </label>
             <select
               id="hotDrink"
-              value={selectedHotDrink}
-              onChange={handleHotDrinkChange}
-              className="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              onChange={(e) => handleDrinkSelection("Hot Drink", e.target.value)}
+              className="border border-gray-300 rounded-md px-3 py-2 w-full"
             >
               <option value="">-- Select --</option>
               {hotBeverages.map((drink) => (
@@ -119,9 +113,8 @@ const Cart = () => {
             </label>
             <select
               id="coldDrink"
-              value={selectedColdDrink}
-              onChange={handleColdDrinkChange}
-              className="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              onChange={(e) => handleDrinkSelection("Cold Drink", e.target.value)}
+              className="border border-gray-300 rounded-md px-3 py-2 w-full"
             >
               <option value="">-- Select --</option>
               {coldBeverages.map((drink) => (
@@ -130,6 +123,53 @@ const Cart = () => {
                 </option>
               ))}
             </select>
+          </div>
+        </div>
+
+        {/* Cart Details Section */}
+        <div className="border rounded-lg p-4 my-6 bg-gray-50">
+          <h2 className="text-xl font-semibold mb-4">Selected Items</h2>
+
+          {selectedPackage && selectedPackagePrice && (
+            <div className="mb-4">
+              <div className="flex justify-between border-b pb-2">
+                <span className="font-medium">Package Number:</span>
+                <span>{selectedPackage}</span>
+              </div>
+              <div className="flex justify-between border-b pb-2">
+                <span className="font-medium">Package Price:</span>
+                <span>{selectedPackagePrice} AED</span>
+              </div>
+            </div>
+          )}
+
+          {selectedDrinks.length > 0 && (
+            <div className="mb-4">
+              <h3 className="font-semibold mb-2">Drinks:</h3>
+              {selectedDrinks.map((drink, index) => (
+                <div key={index} className="flex justify-between items-center border-b pb-2">
+                  <div>
+                    <span>
+                      {drink.type}: {drink.name}
+                    </span>
+                  </div>
+                  <div className="flex items-center">
+                    <span>{drink.price} AED</span>
+                    <button
+                      className="ml-4 text-red-500 font-bold hover:text-red-700"
+                      onClick={() => removeDrink(index)}
+                    >
+                      X
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          <div className="flex justify-between mt-4 text-lg font-bold">
+            <span>Total:</span>
+            <span>{calculateTotal()} AED</span>
           </div>
         </div>
 
@@ -154,8 +194,8 @@ const Cart = () => {
         </div>
 
         {/* Place Order Button */}
-        <button className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">
-          Place Order
+        <button className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-green-600">
+          Notify Us
         </button>
       </div>
     </div>

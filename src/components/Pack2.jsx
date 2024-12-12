@@ -4,8 +4,9 @@ import { motion } from "framer-motion";
 const Packages2 = [
   {
     name: "Package 1 (10-30 people)",
+    number: 1,
     description: "Includes 2 taps/tap holders and a selection of hot and cold drinks.",
-    price: "1600 dirhams",
+    price: 1600,
     drinks: {
       hot: [
         "Red tea", 
@@ -27,8 +28,9 @@ const Packages2 = [
   },
   {
     name: "Package 2 (30-60 people)",
+    number:2,
     description: "Includes 3 taps/tap holders and a selection of hot and cold drinks.",
-    price: "2100 dirhams",
+    price: 2100,
     drinks: {
       hot: [
         "Red tea", 
@@ -50,8 +52,9 @@ const Packages2 = [
   },
   {
     name: "Package 3 (60-80 people)",
+    number: 3,
     description: "Includes 4 taps/tap holders and a selection of hot and cold drinks.",
-    price: "2600 dirhams",
+    price: 2600,
     drinks: {
       hot: [
         "Red tea", 
@@ -73,8 +76,9 @@ const Packages2 = [
   },
   {
     name: "Package 4 (80-100 people)",
+    number: 4,
     description: "Includes 5 taps/tap holders and a selection of hot and cold drinks.",
-    price: "3100 dirhams",
+    price: 3100,
     drinks: {
       hot: [
         "Red tea", 
@@ -96,8 +100,9 @@ const Packages2 = [
   },
   {
     name: "Package 5 (100-130 people)",
+    number: 5,
     description: "Includes 6 taps/tap holders and a selection of hot and cold drinks.",
-    price: "3600 dirhams",
+    price: 3600,
     drinks: {
       hot: [
         "Red tea", 
@@ -119,8 +124,9 @@ const Packages2 = [
   },
   {
     name: "Package 6 (130-150 people)",
+    number:6,
     description: "Includes 7 taps/tap holders and a selection of hot and cold drinks.",
-    price: "4100 dirhams",
+    price: 4100,
     drinks: {
       hot: [
         "Red tea", 
@@ -155,8 +161,8 @@ const PackShowcase2 = ({ onAddToCart }) => { // Receive onAddToCart prop
   };
 
   return (
-    <div className="h-screen px-4 py-8 sm:px-8 bg-yellow-100 rounded-xl max-h-[600px]" id="Packages">
-      <h1 className="text-2xl font-bold text-center mb-4">Select a Package</h1>
+    <div className="h-screen px-4 py-8 sm:px-8 bg-gradient-to-r from-green-50 to-yellow-50 rounded-xl max-h-[600px]" id="Packages">
+      <h1 className="text-2xl italic text-center mb-4 ">Select a Package</h1>
       <div className="relative overflow-hidden mb-12 h-[460px]">
         <div className="flex space-x-6 overflow-x-scroll scrollbar-hide h-full">
           {Packages2.map((product, index) => (
@@ -184,12 +190,12 @@ const PackShowcase2 = ({ onAddToCart }) => { // Receive onAddToCart prop
                   </p>
                 </div>
                 <div className="flex justify-between items-center mt-auto">
-                  <span className="text-xl font-semibold">{product.price}</span>
+                  <span className="text-xl font-semibold text-slate-600">{product.price} AED</span>
                   <button
-                    className="bg-green-500 text-white rounded px-4 py-2 hover:bg-green-600"
+                    className="bg-blue-500 text-white rounded px-8 py-2 hover:bg-green-500"
                     onClick={() => handlePackageSelection(product)}
                   >
-                    Add to cart
+                    Select Pack
                   </button>
                 </div>
               </div>
