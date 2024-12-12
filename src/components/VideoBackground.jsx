@@ -37,7 +37,7 @@ const VideoBackground = () => {
           >
             Ready to indulge? Explore our menu.
           </motion.p>
-          <a href="ExploreMoment"><motion.button
+          <a href="capture-moments"><motion.button
             className="mt-6 bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded shadow-lg transition-all"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}

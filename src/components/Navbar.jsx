@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 
 
 const navigation = [
-  { name: "About", href: "#About" },
+  { name: "About", href: "/about-section" },
   { name: "Luxury Service", href: "/luxury-services" },
-  { name: "Event", href: "#Event" },
-  { name: "Captured Moment", href: "/ExploreMoment" },
+  { name: "Event", href: "/events" },
+  { name: "Captured Moment", href: "/capture-moments" },
 ];
 
 const Navbar = ({ mobileMenuOpen, setMobileMenuOpen }) => {

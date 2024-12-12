@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import Footer from '../components/Footer';
-import Product from '../components/Product';
+import Package from '../components/Packages';
 import BlogSection from '../components/BlogSection';
-import About from '../pages/About';
+import About from '../components/About';
 import VideoBackground from '../components/VideoBackground';
 import PromoBanner from '../components/PromoBanner';
-import { motion } from "framer-motion";
-import { FaInstagram, FaWhatsapp, FaSnapchat } from "react-icons/fa";
 import Testimonial from "../components/Testimonial";
 import Form from "../components/Form";
+import { motion } from "framer-motion";
+import { FaInstagram, FaWhatsapp, FaSnapchat } from "react-icons/fa";
 
 const CateringHeroSection = () => {
   // State to manage the visibility of the popup message
@@ -58,24 +57,13 @@ const CateringHeroSection = () => {
         </motion.p>
 
         {/* Animated Button */}
-        <a href="#Book"><motion.button
+        <a href="luxury-services"><motion.button
           className="mt-6 bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-6 rounded shadow-lg transition-all"
           whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={handleClick} // Trigger popup on button click
-        >
+          whileTap={{ scale: 0.9 }}>
           Book Now
         </motion.button></a>
 
-        {/* Popup Message */}
-        {showPopup && (
-          <div
-            className="absolute top-0 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white p-2 rounded-md shadow-lg mt-4"
-            style={{ zIndex: 100 }}
-          >
-            <p>Under Development</p>
-          </div>
-        )}
       </div>
 
       {/* Social Media and Additional Section */}
@@ -136,7 +124,7 @@ const CateringHeroSection = () => {
 
       <About />
       <VideoBackground />
-      <Product />
+      <Package />
       <BlogSection />
       <Testimonial />
       <Form />

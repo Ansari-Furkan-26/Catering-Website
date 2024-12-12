@@ -1,22 +1,18 @@
-import React, { Suspense, lazy } from "react";
+import React from "react";
 import { motion } from "framer-motion";
+import Cart from "../components/Cart";
 
-const OrderForm = lazy(() => import("../components/OrderForm"));
-const Packages = lazy(() => import("../components/Packages"));
-const PromoBanner = lazy(() => import("../components/PromoBanner"));
-
-const LuxuryServices = () => {
+const Checkout = () => {
   return (
-    <div>
+    <div className="bg-gray-100">
       {/* Hero Section */}
       <div className="relative bg-black h-[30rem] px-4 sm:px-8">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/src/assets/Images/ciel.jpg"
+            src="/src/assets/Images/ciel1.jpg"
             alt="Catering Background"
             className="w-full h-full object-cover opacity-50"
-            loading="lazy"
           />
         </div>
 
@@ -29,7 +25,7 @@ const LuxuryServices = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Elevate your Event
+            Experience Our Services
           </motion.h1>
 
           {/* Animated Paragraph */}
@@ -45,14 +41,10 @@ const LuxuryServices = () => {
         </div>
       </div>
 
-      {/* Other Sections */}
-      <Suspense fallback={<div>Loading...</div>}>
-        <OrderForm />
-        {/* <Packages /> */}
-        <PromoBanner />
-      </Suspense>
+      {/* Cart Component */}
+      <Cart />
     </div>
   );
 };
 
-export default LuxuryServices;
+export default Checkout;
