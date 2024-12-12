@@ -1,24 +1,48 @@
-import React from "react";
-import { Link } from "react-router-dom";  // Import Link from react-router-dom
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { Dialog, DialogPanel } from '@headlessui/react';
+import React, { useEffect, useState } from "react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Dialog, DialogPanel } from "@headlessui/react";
+import { Link } from "react-router-dom";
+
 
 const navigation = [
-  { name: 'About', href: '#' },
-  { name: 'Luxury Service', href: '/luxury-services' },  // Update href to match the route
-  { name: 'Event', href: '#' },
-  { name: 'Gallery', href: '#' },
+  { name: "About", href: "#About" },
+  { name: "Luxury Service", href: "/luxury-services" },
+  { name: "Event", href: "#Event" },
+  { name: "Captured Moment", href: "/ExploreMoment" },
 ];
 
 const Navbar = ({ mobileMenuOpen, setMobileMenuOpen }) => {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  // Handle scroll behavior
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const currentScrollY = window.scrollY;
+
+  //     if (currentScrollY > lastScrollY) {
+  //       setIsVisible(false); // Hide navbar when scrolling down
+  //     } else {
+  //       setIsVisible(true); // Show navbar when scrolling up
+  //     }
+
+  //     setLastScrollY(currentScrollY);
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [lastScrollY]);
+
   return (
-    <header className="absolute inset-x-0 top-0 z-50">
+    <header className="absolute inset-x-0 top-0 z-50 ">
       <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <Link to="/" className="-m-1.5 p-1.5">
             <span className="text-[#FFD700]">ركن</span>
             <span className="text-white"> الضيافة</span>
-          </a>
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -32,33 +56,24 @@ const Navbar = ({ mobileMenuOpen, setMobileMenuOpen }) => {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <Link
-              key={item.name}
-              to={item.href}
-              className="text-sm/6 font-semibold text-white"
-              onClick={() => setMobileMenuOpen(false)}  // Close the mobile menu when a link is clicked
-            >
+            <a key={item.name} href={item.href} className="text-sm font-semibold text-gray-100">
               {item.name}
-            </Link>
+            </a>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm/6 font-semibold text-white">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end ">
+          <a href="#" className="text-sm font-semibold text-white">
             Contact Us <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
         <div className="fixed inset-0 z-50" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <img
-                alt=""
-                src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-                className="h-8 w-auto"
-              />
+              <span className="text-[#FFD700]">ركن</span>
+              <span className="text-white"> الضيافة</span>
             </a>
             <button
               type="button"
@@ -73,20 +88,19 @@ const Navbar = ({ mobileMenuOpen, setMobileMenuOpen }) => {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 {navigation.map((item) => (
-                  <Link
+                  <a
                     key={item.name}
-                    to={item.href}
-                    onClick={() => setMobileMenuOpen(false)}  // Close the menu when a link is clicked
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                    href={item.href}
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-100 hover:bg-gray-800"
                   >
                     {item.name}
-                  </Link>
+                  </a>
                 ))}
               </div>
               <div className="py-6">
                 <a
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-gray-100 hover:bg-gray-800"
                 >
                   Contact Us
                 </a>
