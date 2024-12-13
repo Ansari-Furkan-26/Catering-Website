@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import Event from './pages/Event';
 import AboutSection from './pages/AboutSection';
 import CapturedMoment from './pages/CapturedMoment';
-import Checkout from './pages/Checkout';
+import Checkout from './components/Checkout';
 import LocomotiveScroll from 'locomotive-scroll';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 

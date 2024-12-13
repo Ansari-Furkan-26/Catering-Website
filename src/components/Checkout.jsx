@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Cart from "../components/Cart";
+import Cart from "./Cart";
+import PackShowcase2 from "./Pack2";
 
 const Checkout = () => {
   return (
@@ -10,7 +11,7 @@ const Checkout = () => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/src/assets/Images/ciel1.jpg"
+            src="https://i.pinimg.com/736x/7d/0f/d4/7d0fd4fcc1518a8b953ce1a2e5790aca.jpg"
             alt="Catering Background"
             className="w-full h-full object-cover opacity-50"
           />
@@ -42,6 +43,7 @@ const Checkout = () => {
       </div>
 
       {/* Cart Component */}
+      <PackShowcase2 />
       <Cart />
     </div>
   );

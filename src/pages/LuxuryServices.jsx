@@ -13,7 +13,7 @@ const LuxuryServices = () => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/src/assets/Images/ciel.jpg"
+            src="https://i.pinimg.com/736x/22/f8/4f/22f84fbacc70ee68a07f0efa9b9dca40.jpg"
             alt="Catering Background"
             className="w-full h-full object-cover opacity-50"
             loading="lazy"
@@ -45,12 +45,9 @@ const LuxuryServices = () => {
         </div>
       </div>
 
-      {/* Other Sections */}
-      <Suspense fallback={<div>Loading...</div>}>
         <OrderForm />
         {/* <Packages /> */}
         <PromoBanner />
-      </Suspense>
     </div>
   );
 };
