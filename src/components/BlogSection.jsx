@@ -35,7 +35,7 @@ const BlogSection = () => {
             Explore the world of gourmet catering, from tantalizing seasonal menus to the artistry of event presentation.
             Discover how every detail enhances your special moments.
           </p>
-          <a href="ExploreMoment">
+          <a href="events">
             <button className="mt-6 px-6 py-2 bg-black text-white rounded-md hover:bg-gray-800">
               Explore All Blogs
             </button>

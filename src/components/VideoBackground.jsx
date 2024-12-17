@@ -6,11 +6,13 @@ const VideoBackground = () => {
   return (
     <div className="relative h-screen" id="Event">
       {/* Video Background */}
-      <video className="absolute inset-0 w-full h-full object-cover"
+      {/* <video className="absolute inset-0 w-full h-full object-cover"
         autoPlay loop muted>
         <source src={Intro} type="video/mp4" />
         Your browser does not support the video tag.
-      </video>
+      </video> */}
+      <img src="https://i.pinimg.com/736x/fe/8c/85/fe8c85b4cd10695c0d11a9a3fb7d6d7a.jpg"
+      className="absolute inset-0 w-full h-full object-cover" alt="" />
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-40"></div>
@@ -37,7 +39,7 @@ const VideoBackground = () => {
           >
             Ready to indulge? Explore our menu.
           </motion.p>
-          <a href="ExploreMoment"><motion.button
+          <a href="capture-moments"><motion.button
             className="mt-6 bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded shadow-lg transition-all"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
