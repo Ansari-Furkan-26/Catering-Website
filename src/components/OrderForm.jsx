@@ -39,7 +39,7 @@ const OrderForm = () => {
         className="mt-1 p-2 w-full border border-gray-300 rounded-lg"
         {...additionalProps}
       />
-    </div>
+    </div> 
   );
 
   // Check if all fields are filled
