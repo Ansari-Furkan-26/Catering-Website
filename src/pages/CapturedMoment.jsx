@@ -59,47 +59,10 @@ const Gallery = () => {
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative text-center text-white px-4">
-          <h2 className="text-3xl font-bold mb-4">Capture the Moment</h2>
+          <h2 className="text-3xl font-bold mb-4">Capture the joy of every sip</h2>
           <p className="text-lg">
             Preserving your most cherished moments, one event at a time. Let us bring your celebrations to life with exquisite catering and attention to detail.
           </p>
-        </div>
-      </section>
-
-      {/* Event images with text */}
-      <section className="px-4 lg:px-32 py-16" id="Event">
-        <div className="flex flex-col md:flex-row gap-8">
-          {/* Event 1 */}
-          <div className="flex-1 bg-white rounded-lg shadow-xl overflow-hidden">
-            <LazyLoadImage
-              src="https://i.pinimg.com/736x/da/5f/e8/da5fe845a8e6ce25b4884ee0a14cbc0b.jpg"
-              alt="Event 1"
-              effect="blur"
-              className="w-full object-cover"
-            />
-            <div className="p-4">
-              <h3 className="text-xl font-semibold">Event One</h3>
-              <p className="text-gray-600">
-                A remarkable celebration that brought joy to everyone. Exceptional catering, unforgettable moments.
-              </p>
-            </div>
-          </div>
-
-          {/* Event 2 */}
-          <div className="flex-1 bg-white rounded-lg shadow-xl overflow-hidden">
-            <LazyLoadImage
-              src="https://i.pinimg.com/736x/20/68/de/2068dea5d271db4d361176fcb93fb065.jpg"
-              alt="Event 2"
-              effect="blur"
-              className="w-full object-cover"
-            />
-            <div className="p-4">
-              <h3 className="text-xl font-semibold">Event Two</h3>
-              <p className="text-gray-600">
-                Another milestone event, where our catering service added flavor to every moment, making it truly special.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -107,7 +70,7 @@ const Gallery = () => {
       <header className="flex flex-col items-center justify-center text-center text-gray-800 pt-14 pb-8">
         <h1 className="text-3xl font-bold mb-2">Catering Experience</h1>
         <h2 className="px-2 text-sm max-w-3xl lg:text-md text-gray-600">
-          Explore a dynamic showcase of our culinary artistry, where each dish tells a story, and every event is designed to offer a flavorful, memorable journey. Dive into the world of taste and creativity, and let us bring your next celebration to life with our personalized catering services.
+          Explore a dynamic showcase of our culinary artistry, where each beverage tells a story, and every event is designed to offer a flavorful, memorable journey. Dive into the world of taste and creativity, and let us bring your next celebration to life with our personalized catering services.
         </h2>
       </header>
 

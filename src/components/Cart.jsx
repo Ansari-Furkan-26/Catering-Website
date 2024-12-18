@@ -48,6 +48,17 @@ const Cart = ({ selectedPackage, selectedPackagePrice  }) => {
   const [showThankYouPopup, setShowThankYouPopup] = useState(false); // State to show the popup
   const DRINK_PRICE = 200;
 
+  const DELIVERY_CHARGES = {
+    "Abu Dhabi": 300,
+    "Ajman": 0,
+    "Al Ain": 400,
+    "Dubai": 0,
+    "Fujairah": 300,
+    "Ras Al Khaimah": 300,
+    "Sharjah": 0,
+    "Umm Al Quwain": 0,
+  };
+
   const handleDrinkSelection = (drinkType, drinkName) => {
     if (!drinkName || selectedDrinks.some((drink) => drink.name === drinkName)) return;
   
@@ -66,7 +77,8 @@ const Cart = ({ selectedPackage, selectedPackagePrice  }) => {
 
   const calculateTotal = () => {
     const drinksTotal = selectedDrinks.reduce((sum, drink) => sum + drink.price, 0);
-    return (selectedPackagePrice || 0) + drinksTotal;
+    const deliveryCharge = DELIVERY_CHARGES[formData.city] || 0;
+    return (selectedPackagePrice || 0) + drinksTotal + deliveryCharge;
   };
 
   const handleOrderSubmit = () => {
@@ -83,12 +95,14 @@ const Cart = ({ selectedPackage, selectedPackagePrice  }) => {
     ${selectedDrinks.map((drink, index) => `- ${drink.type}: ${drink.name} (${drink.price} AED)`).join("\n")}
     
     *Client Information:*
-    - Name: ${formData.name}
-    - Email: ${formData.email}
-    - City: ${formData.city}
-    - Phone: ${formData.phone}
-    - Guests: ${formData.guests}
-    - Event Date: ${formData.eventDate}
+    - Name: ${formData.name || "N/A"}
+    - Email: ${formData.email || "N/A"}
+    - City: ${formData.city || "N/A"}
+    - Phone: ${formData.phone || "N/A"}
+    - Guests: ${formData.guests || "N/A"}
+    - Event Date: ${formData.eventDate || "N/A"}
+
+    *Delivery Charge:* ${DELIVERY_CHARGES[formData.city] || 0} AED
     
     *Total Amount:* ${totalAmount} AED
       `.trim();
@@ -97,7 +111,7 @@ const Cart = ({ selectedPackage, selectedPackagePrice  }) => {
       const encodedMessage = encodeURIComponent(message);
     
       // WhatsApp API link
-      const whatsappLink = `https://wa.me/7045992776?text=${encodedMessage}`;
+      const whatsappLink = `https://wa.me/+917045992776?text=${encodedMessage}`;
     
       // Redirect to WhatsApp
       window.open(whatsappLink, "_blank");
@@ -184,15 +198,23 @@ const Cart = ({ selectedPackage, selectedPackagePrice  }) => {
                     className="ml-4 text-red-500 font-bold hover:text-red-700"
                     onClick={() => removeDrink(index)}>
                     <MdDelete />
-
                   </button>
-                </div>
+                </div>                
               </div>
             ))}
           </div>
         )}
           </div>
         )}
+        
+        {/* Delivery Charges */}
+        <div className="flex justify-between mt-4 text-lg">
+          <span>Delivery Charges:</span>
+          <span>
+            {DELIVERY_CHARGES[formData.city] === 0 ? "Free" : `${DELIVERY_CHARGES[formData.city]} AED`}
+          </span>
+        </div>
+
         <div className="flex justify-between mt-4 text-lg font-bold">
           <span>Total:</span>
           <span>{calculateTotal()} AED</span>

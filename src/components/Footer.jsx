@@ -14,33 +14,24 @@ function Footer() {
 
       {/* Navigation Links */}
       <div className="mt-6 flex justify-center lg:justify-end">
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-3 text-center lg:text-left">
-          <a href="#home" className="text-gray-400 hover:text-gray-100">
+        <div className="grid grid-cols-3 gap-4 lg:grid-cols-3 text-center lg:text-left">
+          <a href="/" className="text-gray-400 hover:text-gray-100">
             Home
           </a>
-          <a href="#services" className="text-gray-400 hover:text-gray-100">
+          <a href="/luxury-services" className="text-gray-400 hover:text-gray-100">
             Services
           </a>
-          <a href="#about" className="text-gray-400 hover:text-gray-100">
+          <a href="/capture-moments" className="text-gray-400 hover:text-gray-100">
+          Gallery
+          </a>
+          <a href="/about-section" className="text-gray-400 hover:text-gray-100">
             About Us
           </a>
-          <a href="#menu" className="text-gray-400 hover:text-gray-100">
-            Menu
-          </a>
-          <a href="#events" className="text-gray-400 hover:text-gray-100">
+          <a href="/events" className="text-gray-400 hover:text-gray-100">
             Events
           </a>
-          <a href="#testimonials" className="text-gray-400 hover:text-gray-100">
-            Testimonials
-          </a>
-          <a href="#gallery" className="text-gray-400 hover:text-gray-100">
-            Gallery
-          </a>
-          <a href="#contact" className="text-gray-400 hover:text-gray-100">
+          <a href="https://wa.me/+971503665518" target="_blank" className="text-gray-400 hover:text-gray-100">
             Contact Us
-          </a>
-          <a href="#faq" className="text-gray-400 hover:text-gray-100">
-            FAQ
           </a>
         </div>
       </div>
@@ -60,24 +51,19 @@ function Footer() {
           <a href="https://www.instagram.com/rukn_aldyafa/"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gray-800 hover:bg-gray-700 rounded-full h-10 w-10 flex items-center justify-center"
-          >
+            className="bg-gray-800 hover:bg-gray-700 rounded-full h-10 w-10 flex items-center justify-center">
             <FaInstagram className="text-white text-xl" />
           </a>
-          <a
-            href="https://wa.me/yourphonenumber"
+          <a href="https://wa.me/+971503665518"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gray-800 hover:bg-gray-700 rounded-full h-10 w-10 flex items-center justify-center"
-          >
+            className="bg-gray-800 hover:bg-gray-700 rounded-full h-10 w-10 flex items-center justify-center">
             <FaWhatsapp className="text-white text-xl" />
           </a>
-          <a
-            href="https://www.snapchat.com/add/yourusername"
+          <a href="https://www.snapchat.com/add/ruknaldyafa?sender_web_id=f7b1dbb5-c3c0-48c6-a15b-058b0e4429dc&device_type=desktop&is_copy_url=true"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gray-800 hover:bg-gray-700 rounded-full h-10 w-10 flex items-center justify-center"
-          >
+            className="bg-gray-800 hover:bg-gray-700 rounded-full h-10 w-10 flex items-center justify-center">
             <FaSnapchat className="text-white text-xl" />
           </a>
         </div>

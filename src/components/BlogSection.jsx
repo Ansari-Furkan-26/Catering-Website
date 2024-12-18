@@ -1,7 +1,7 @@
 import React from "react";
-import IMG8 from "../assets/Images/6.JPG";
-import IMG41 from "../assets/Images/9.JPG";
-import IMG9 from "../assets/Images/33.JPG";
+import IMG8 from "../assets/Images/8.JPG";
+import IMG9 from "../assets/Images/9.JPG";
+import IMG16 from "../assets/Images/16.JPG";
 
 const BlogSection = () => {
   const blogs = [
@@ -12,13 +12,13 @@ const BlogSection = () => {
       readTime: "5 min read",
     },
     {
-      image: IMG41,
+      image: IMG9,
       title: "Tea Time Perfection",
       message: "Savor the perfect cup of tea, expertly brewed and served to provide a comforting and delightful experience for every guest.",
       readTime: "5 min read",
     },
     {
-      image: IMG9,
+      image: IMG16,
       title: "Sweet Treats Galore",
       message: "Indulge in a selection of exquisite sweets, crafted with care to bring joy and flavor to every moment of your event.",
       readTime: "5 min read",
@@ -30,10 +30,9 @@ const BlogSection = () => {
       <div className="max-w-6xl mx-auto">
         {/* Title and description */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">Catering Insights and Inspiration</h2>
+          <h2 className="text-4xl font-bold mb-4">Hospitality Insights and Inspiration</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Explore the world of gourmet catering, from tantalizing seasonal menus to the artistry of event presentation.
-            Discover how every detail enhances your special moments.
+          Explore the world of gourmet beverages, from tantalizing seasonal drink selections to the artistry of drink presentation. Discover how every detail enhances your special moments.
           </p>
           <a href="events">
             <button className="mt-6 px-6 py-2 bg-black text-white rounded-md hover:bg-gray-800">
@@ -45,7 +44,7 @@ const BlogSection = () => {
         {/* Blog grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogs.map((blog, index) => (
-            <div key={index} className="relative overflow-hidden rounded-lg shadow-lg group">
+            <a href="/events"><div key={index} className="relative overflow-hidden rounded-lg shadow-lg group">
               <img
                 src={blog.image}
                 alt={blog.title}
@@ -63,7 +62,7 @@ const BlogSection = () => {
                   </button>
                 </div>
               </div>
-            </div>
+            </div></a>
           ))}
         </div>
       </div>

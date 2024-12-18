@@ -8,7 +8,7 @@ import IMG33 from "../assets/Images/33.JPG";
 const cards = [
   {
     img: IMG6,
-    title: "Beverage Exhibition",
+    title: "Beverage Service Experience",
     message: "Rukn Al Dyafa serves the finest traditional and international beverages with exceptional service, enhancing the visitor experience at every moment.",
   },
   {
@@ -33,7 +33,7 @@ function About() {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}>
-          Delivering Timeless Elegance and Culinary Excellence to Your Events.
+          Delivering Timeless Elegance and Mixology Excellence to Your Events.
         </motion.h1>
         <motion.div
           className="block max-w-2xl"

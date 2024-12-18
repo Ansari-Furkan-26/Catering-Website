@@ -1,10 +1,10 @@
 import React from "react";
 
-const headerImage = 'https://i.pinimg.com/736x/93/cb/fc/93cbfc40b65aad51972857bd058855f1.jpg';
-const sectionImage = 'https://i.pinimg.com/736x/3e/56/96/3e569617c036c136ba599dfddfbf313b.jpg';
+const headerImage = 'https://i.pinimg.com/736x/c0/88/59/c0885989e1a17079e0e8ec5d5c5138df.jpg';
+// const sectionImage = 'https://i.pinimg.com/736x/d7/b6/dd/d7b6dd956300579290729398cbd68e10.jpg';
 const events = [
   {
-    img: 'https://i.pinimg.com/736x/47/dc/4c/47dc4c01772834bf935754563692ab83.jpg',
+    img: 'https://i.pinimg.com/736x/a3/ca/be/a3cabe4c70a37cedb8d0b7bea049e3ea.jpg',
     title: 'Elegant Wedding Catering',
     description: 'Our wedding catering service offers a sophisticated touch to your special day. From gourmet appetizers to elegant main courses, we create custom menus to suit every taste. Let us take care of the details while you enjoy your celebration with family and friends.',
   },
@@ -30,7 +30,7 @@ function Eventpg() {
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative text-center text-white px-4">
-          <h2 className="text-3xl font-bold mb-4">Experience the Magic of Unforgettable Moments.</h2>
+          <h2 className="text-3xl font-bold mb-4">Our services offer exquisite beverages for your events</h2>
           <p className="text-lg">
             From grand gatherings to intimate celebrations, we transform every occasion into something truly special.
           </p>
@@ -38,13 +38,13 @@ function Eventpg() {
       </section>
 
       {/* Image Section */}
-      <section className="flex justify-center items-center w-5/6 mx-auto mt-16 mb-16">
+      {/* <section className="flex justify-center items-center w-5/6 mx-auto mt-16 mb-16">
         <img
           className="md:block w-full h-96 md:h-[400px] lg:h-[500px] rounded-lg shadow-lg object-cover"
           src={sectionImage}
           alt="Celebration Image"
         />
-      </section>
+      </section> */}
 
       {/* Events Section */}
       <div className="max-w-7xl mx-auto mt-6 px-4">

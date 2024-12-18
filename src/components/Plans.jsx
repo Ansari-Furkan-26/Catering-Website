@@ -4,46 +4,46 @@ import { motion } from "framer-motion";
 
 const Packages = [
   {
-    name: "Majlis Al-Dhahab",
-    title: "Package 1 (10-30 Guests)",
+    name: "Package 1",
+    title: "(10-30 Guests)",
     description: "Service providers: 2",
     price: "From 1600 AED",
-    img: "https://i.pinimg.com/736x/04/8c/af/048caf1fb579128cc2730ecd7a536637.jpg",
+    img: "https://i.pinimg.com/736x/1e/f7/38/1ef7380b6fe1eb82d1653966a51bd72b.jpg"
   },
   {
-    name: "Royal Celebration",
-    title: "Package 2 (30-60 Guests)",
+    name: "Package 2",
+    title: "(30-60 Guests)",
     description: "Service providers: 3",
     price: "From 2100 AED",
-    img: "https://i.pinimg.com/736x/04/8c/af/048caf1fb579128cc2730ecd7a536637.jpg",
+    img: "https://i.pinimg.com/736x/83/cb/9d/83cb9d2dbc3c702991d8bdc6da100df2.jpg"
   },
   {
-    name: "Premium Service",
-    title: "Package 3 (60-80 Guests)",
+    name: "Package 3",
+    title: "(60-80 Guests)",
     description: "Service providers: 3",
     price: "From 2600 AED",
-    img: "https://i.pinimg.com/736x/04/8c/af/048caf1fb579128cc2730ecd7a536637.jpg",
+    img: "https://i.pinimg.com/736x/c1/88/fd/c188fd02f4ddce1079485372781cd48f.jpg"
   },
   {
-    name: "Exclusive Delight",
-    title: "Package 4 (80-100 Guests)",
+    name: "Package 4",
+    title: "(80-100 Guests)",
     description: "Service providers: 5",
     price: "From 3100 AED",
-    img: "https://i.pinimg.com/736x/04/8c/af/048caf1fb579128cc2730ecd7a536637.jpg",
+    img: "https://i.pinimg.com/736x/af/80/b5/af80b5f4b118152ac72aebac35db1b4c.jpg"
   },
   {
-    name: "Grand Gala",
-    title: "Package 5 (100-130 Guests)",
+    name: "Package 5",
+    title: "(100-130 Guests)",
     description: "Service providers: 6",
     price: "From 3600 AED",
-    img: "https://i.pinimg.com/736x/04/8c/af/048caf1fb579128cc2730ecd7a536637.jpg",
+    img: "https://i.pinimg.com/736x/04/8c/af/048caf1fb579128cc2730ecd7a536637.jpg"
   },
   {
-    name: "Elite Gathering",
-    title: "Package 6 (130-150 Guests)",
+    name: "Package 6",
+    title: "(130-150 Guests)",
     description: "Service providers: 7",
     price: "From 4100 AED",
-    img: "https://i.pinimg.com/736x/04/8c/af/048caf1fb579128cc2730ecd7a536637.jpg",
+    img: "https://i.pinimg.com/736x/ec/0e/0b/ec0e0b2ee0b2a51699ebf6f5e4893d4d.jpg"
   },
 ];
 
@@ -54,7 +54,7 @@ const ProductShowcase = () => {
       <h1 className="text-3xl font-bold text-center mb-6">Our Exclusive Packages</h1>
 
       {/* Grid Cards */}
-      <div className="relative overflow-hidden pl-4">
+      <div className="relative overflow-hidden px-3">
        <div className="flex space-x-6 py-5  overflow-x-auto overflow-y-hidden scrollbar-hide snap-x snap-mandatory">
           
         {Packages.map((product, index) => (

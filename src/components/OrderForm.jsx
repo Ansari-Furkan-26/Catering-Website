@@ -10,16 +10,32 @@ const OrderForm = () => {
     phone: '',
     guests: 1,
     eventDate: '',
+    deliveryCharge: 0, // Add deliveryCharge to formData
   });
 
-  const cities = ['Abu Dhabi', 'Ajman', 'Al Ain', 'Dubai', 'Sharjah']; // Example cities
+  // City to delivery charge mapping
+  const cityCharges = {
+    'Abu Dhabi': 300,
+    'Ajman': 0,
+    'Al Ain': 400,
+    'Dubai': 0,
+    'Fujairah': 300,
+    'Ras Al Khaimah': 300,
+    'Sharjah': 0,
+    'Umm Al Quwain': 0,
+  };
+
+  const cities = Object.keys(cityCharges);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+
+    // Update form data and calculate delivery charge if city changes
+    setFormData((prevData) => ({
+      ...prevData,
       [name]: value,
-    });
+      deliveryCharge: name === 'city' ? cityCharges[value] || 0 : prevData.deliveryCharge,
+    }));
   };
 
   const handleSubmit = (e) => {
@@ -37,13 +53,14 @@ const OrderForm = () => {
         value={formData[name]}
         onChange={handleChange}
         className="mt-1 p-2 w-full border border-gray-300 rounded-lg"
+        required
         {...additionalProps}
       />
-    </div> 
+    </div>
   );
 
   // Check if all fields are filled
-  const isFormValid = Object.values(formData).every((field) => field !== '');
+  const isFormValid = Object.values(formData).every((field) => field !== '' || field === 0);
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100" id="orderform">
@@ -61,6 +78,7 @@ const OrderForm = () => {
                 name="city"
                 value={formData.city}
                 onChange={handleChange}
+                required
                 className="mt-1 p-2 w-full border rounded-lg bg-transparent text-gray-700"
               >
                 <option value="">Select City</option>
@@ -72,12 +90,22 @@ const OrderForm = () => {
               </select>
             </div>
 
+            {/* Show delivery charge */}
+            {/* {formData.city && (
+              <div className="mb-4">
+                <label className="block text-sm font-medium text-gray-700">Delivery Charge</label>
+                <div className="mt-1 p-2 w-full border rounded-lg bg-gray-100 text-gray-700">
+                  {`AED ${formData.deliveryCharge}`}
+                </div>
+              </div>
+            )} */}
+
             {renderInput('Phone Number', 'phone', 'tel')}
             {renderInput('Number of Guests', 'guests', 'number', { min: 1 })}
             {renderInput('Date of Event', 'eventDate', 'date')}
 
-            {/* Submit Button */}
-            <div className="flex justify-center mb-4">
+             {/* Submit Button */}
+             <div className="flex justify-center mb-4">
               {/* <button 
                 type="submit" 
                 className={`bg-blue-500 text-white p-2 rounded-md w-full hover:bg-green-600 ${!isFormValid ? 'opacity-50 cursor-not-allowed' : ''}`} 

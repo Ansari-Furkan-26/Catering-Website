@@ -1,9 +1,6 @@
-import React, { Suspense, lazy } from "react";
-import { motion } from "framer-motion";
-
-const OrderForm = lazy(() => import("../components/OrderForm"));
-const Packages = lazy(() => import("../components/Packages"));
-const PromoBanner = lazy(() => import("../components/PromoBanner"));
+import React, { Suspense } from "react";
+import OrderForm from "../components/OrderForm";
+import PromoBanner from "../components/PromoBanner";
 
 const LuxuryServices = () => {
   return (
@@ -23,31 +20,23 @@ const LuxuryServices = () => {
         {/* Content */}
         <div className="relative text-left md:text-center text-white flex flex-col items-start md:items-center justify-center h-full">
           {/* Animated Heading */}
-          <motion.h1
-            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Elevate your Event
-          </motion.h1>
+          <h1 className="text-2xl sm:text-4xl md:text-3xl font-bold leading-tight">
+            Experience luxury with our premium drink selection
+          </h1>
 
           {/* Animated Paragraph */}
-          <motion.p
-            className="mt-4 text-sm sm:text-lg md:text-xl italic max-w-2xl"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
+          <p className="mt-4 text-sm sm:text-lg md:text-xl italic max-w-2xl">
             At Rukn Al Dyafa, we deliver the elegance of traditional hospitality
             through luxurious catering.
-          </motion.p>
+          </p>
         </div>
       </div>
 
+      {/* Suspense wrapper to load lazy components */}
+      <Suspense fallback={<div>Loading...</div>}>
         <OrderForm />
-        {/* <Packages /> */}
         <PromoBanner />
+      </Suspense>
     </div>
   );
 };

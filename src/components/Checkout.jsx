@@ -21,8 +21,7 @@ const Checkout = () => {
           <img
             src="https://i.pinimg.com/736x/74/fa/f7/74faf76a2616f4f776cf157c18a09d77.jpg"
             alt="Hero"
-            className="w-full h-full object-cover opacity-50"
-          />
+            className="w-full h-full object-cover opacity-50"/>
         </div>
         {/* Content */}
       <div className="relative text-left md:text-center text-white flex flex-col items-start md:items-center justify-center h-full">
@@ -31,8 +30,7 @@ const Checkout = () => {
             className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+            transition={{ duration: 0.8 }}>
             Experience Our Services
           </motion.h1>
 

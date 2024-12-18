@@ -5,7 +5,7 @@ import About from '../components/About';
 import VideoBackground from '../components/VideoBackground';
 import PromoBanner from '../components/PromoBanner';
 import Testimonial from "../components/Testimonial";
-import Form from "../components/Form";
+import Form from "../components/ContactForm";
 import { motion } from "framer-motion";
 import { FaInstagram, FaWhatsapp, FaSnapchat } from "react-icons/fa";
 
@@ -18,16 +18,16 @@ const CateringHeroSection = ({ language }) => {
       paragraph:
         "At Rukn Al Dyafa, we deliver the elegance of traditional hospitality through luxurious catering, crafting unforgettable experiences with exquisite beverages for every occasion.",
       bookNow: "Book Now",
-      SideQuote: "Every week there is a set for two-tours",
-      SideDesc: "High-quality photos, verified floor plans, and virtual tours for all properties."
+      SideQuote: "Every season there is a set for two-tours",
+      SideDesc: "Exclusive arrangements, and immersive experiences for beverage services."
     },
     arabic: {
       heading: "نكهات تروي القصص، \nوضيافة تلهم اللحظات.",
       paragraph:
         "في ركن الضيافة، نقدم أناقة الضيافة التقليدية من خلال خدمات الضيافة الفاخرة، ونصنع تجارب لا تُنسى مع مشروبات راقية لكل مناسبة.",
       bookNow: "احجز الآن",
-      SideQuote: "كل اسبوع يوجد مجموعة لجولتين",
-      SideDesc: "صور عالية الجودة، ومخططات طوابق موثقة، وجولات افتراضية لجميع العقارات."
+      SideQuote: "في كل موسم هناك مجموعة لجولتين",
+      SideDesc: "ترتيبات حصرية وتجارب غامرة لخدمات المشروبات"
     },
   };
 
@@ -89,13 +89,16 @@ const CateringHeroSection = ({ language }) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <a href="#" className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-full hover:bg-gray-600 transition">
+            <a href="https://www.instagram.com/rukn_aldyafa/" target="_blank"
+            className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-full hover:bg-gray-600 transition">
               <FaInstagram />
             </a>
-            <a href="#" className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-full hover:bg-gray-600 transition">
+            <a href="https://wa.me/+971503665518" target="_blank"
+            className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-full hover:bg-gray-600 transition">
               <FaWhatsapp />
             </a>
-            <a href="#" className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-full hover:bg-gray-600 transition">
+            <a href="https://www.snapchat.com/add/ruknaldyafa?sender_web_id=f7b1dbb5-c3c0-48c6-a15b-058b0e4429dc&device_type=desktop&is_copy_url=true" 
+            target="_blank" className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-full hover:bg-gray-600 transition">
               <FaSnapchat />
             </a>
           </motion.div>

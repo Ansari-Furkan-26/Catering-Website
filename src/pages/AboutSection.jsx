@@ -10,7 +10,7 @@ const AboutSection = () => {
       <section
         className="relative bg-cover bg-center h-[500px] flex items-center justify-center"
         style={{
-          backgroundImage: `url('https://i.pinimg.com/736x/ad/6d/f7/ad6df7aab8a0828cca4a2a471e62bae5.jpg')`,
+          backgroundImage: `url('https://i.pinimg.com/736x/ed/5a/77/ed5a77dc9815460f8af4eb394803d727.jpg')`,
         }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
