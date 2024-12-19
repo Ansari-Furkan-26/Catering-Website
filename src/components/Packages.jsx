@@ -18,9 +18,9 @@ const coldDrinks = [
 ];
 
 const Packages2 = [
-  {
-    name: "Majlis Al-Dhahab",
-    title: "Package 1 (10-30 Guests)",
+  {    
+    title: "Package 1 ",
+    guests: "(10-30 Guests)",
     description: "Service providers: 2",
     price: 1600,
     drinks: {
@@ -28,11 +28,11 @@ const Packages2 = [
       cold: coldDrinks,
       additional: "Any additional drink is AED 200"
     },
-    img: "https://i.pinimg.com/736x/04/8c/af/048caf1fb579128cc2730ecd7a536637.jpg"
+    img: "https://i.pinimg.com/736x/1e/f7/38/1ef7380b6fe1eb82d1653966a51bd72b.jpg"
   },
   {
-    name: "Royal Celebration",
-    title: "Package 2 (30-60 Guests)",
+    title: "Package 2",
+    guests: "(30-60 Guests)",
     description: "Service providers: 3",
     price: 2100,
     drinks: {
@@ -40,11 +40,11 @@ const Packages2 = [
       cold: coldDrinks,
       additional: "Any additional drink is AED 200"
     },
-    img: "https://i.pinimg.com/736x/04/8c/af/048caf1fb579128cc2730ecd7a536637.jpg"
+    img: "https://i.pinimg.com/736x/83/cb/9d/83cb9d2dbc3c702991d8bdc6da100df2.jpg"
   },
   {
-    name: "Premium Service",
-    title: "Package 3 (60-80 Guests)",
+    title: "Package 3",
+    guests: "(60-80 Guests)",
     description: "Service providers: 3",
     price: 2600,
     drinks: {
@@ -52,11 +52,11 @@ const Packages2 = [
       cold: coldDrinks,
       additional: "Any additional drink is AED 200"
     },
-    img: "https://i.pinimg.com/736x/04/8c/af/048caf1fb579128cc2730ecd7a536637.jpg"
+    img: "https://i.pinimg.com/736x/c1/88/fd/c188fd02f4ddce1079485372781cd48f.jpg"
   },
   {
-    name: "Exclusive Delight",
-    title: "Package 4 (80-100 Guests)",
+    title: "Package 4",
+    guests: "(80-100 Guests)",
     description: "Service providers: 5",
     price: 3100,
     drinks: {
@@ -64,11 +64,11 @@ const Packages2 = [
       cold: coldDrinks,
       additional: "Any additional drink is AED 200"
     },
-    img: "https://i.pinimg.com/736x/04/8c/af/048caf1fb579128cc2730ecd7a536637.jpg"
+    img: "https://i.pinimg.com/736x/af/80/b5/af80b5f4b118152ac72aebac35db1b4c.jpg"
   },
   {
-    name: "Grand Gala",
-    title: "Package 5 (100-130 Guests)",
+    title: "Package 5",
+    guests: "(100-130 Guests)",
     description: "Service providers: 6",
     price: 3600,
     drinks: {
@@ -79,8 +79,8 @@ const Packages2 = [
     img: "https://i.pinimg.com/736x/04/8c/af/048caf1fb579128cc2730ecd7a536637.jpg"
   },
   {
-    name: "Elite Gathering",
-    title: "Package 6 (130-150 Guests)",
+    title: "Package 6",
+    guests: "(130-150 Guests)",
     description: "Service providers: 7",
     price: 4100,
     drinks: {
@@ -88,7 +88,7 @@ const Packages2 = [
       cold: coldDrinks,
       additional: "Any additional drink is AED 200"
     },
-    img: "https://i.pinimg.com/736x/04/8c/af/048caf1fb579128cc2730ecd7a536637.jpg"
+    img: "https://i.pinimg.com/736x/ec/0e/0b/ec0e0b2ee0b2a51699ebf6f5e4893d4d.jpg"
   }
 ];
 
@@ -126,11 +126,11 @@ const PackShowcase2 = ({ onSelectPackage }) => {
             >
               <div className="bg-white rounded-lg shadow-lg p-6 mb-6 max-w-sm h-full flex flex-col">
                 <img src={product.img}
-                  alt={product.name}
-                  className="w-full h-40 object-cover mb-2 rounded-lg"/>
-                <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
-                <p className="text-gray-600 mb-2">{product.title}</p>
-                <p className="text-gray-600 mb-2">{product.description}</p>
+                  alt={product.title}
+                  className="w-full h-40 object-cover mb-2 rounded-lg"/>                  
+                <h2 className="text-xl font-semibold">{product.title}</h2>
+                <p className="text-gray-600">{product.guests}</p>
+                <p className="text-gray-600">{product.description}</p>
                 <div className="text-sm my-2">
                   <p className="text-sm">
                     <strong>Hot Drinks:</strong>
@@ -158,7 +158,7 @@ const PackShowcase2 = ({ onSelectPackage }) => {
                     className="bg-blue-500 text-white rounded px-8 py-2 hover:bg-green-500"
                     onClick={() => {
                       onSelectPackage(product.title, product.price);  // Existing function
-                      handleSelectPackage();  // Show popup
+                      // handleSelectPackage();  // Show popup
                     }}>
                     Select Pack
                   </button>

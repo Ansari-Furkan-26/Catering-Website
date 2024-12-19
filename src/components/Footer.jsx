@@ -1,7 +1,118 @@
+// import React from "react";
+// import { FaInstagram, FaWhatsapp, FaSnapchat } from "react-icons/fa";
+
+// function Footer() {
+//   return (
+//     <footer className="bg-gray-900 text-white w-full p-6 md:p-8">
+//       {/* Branding Section */}
+//       <div className="text-center lg:text-left">
+//         <h1 className="text-2xl font-bold tracking-wider uppercase">
+//           <span className="text-[#FFD700]">ركن</span>{" "}
+//           <span className="text-white"> الضيافة</span>
+//         </h1>
+//       </div>
+
+//       {/* Navigation Links */}
+//       <div className="mt-6 flex justify-center lg:justify-end">
+//         <div className="grid grid-cols-3 gap-4 lg:grid-cols-3 text-center lg:text-left">
+//           <a href="/" className="text-gray-400 hover:text-gray-100">
+//             Home
+//           </a>
+//           <a href="/luxury-services" className="text-gray-400 hover:text-gray-100">
+//             Services
+//           </a>
+//           <a href="/capture-moments" className="text-gray-400 hover:text-gray-100">
+//           Gallery
+//           </a>
+//           <a href="/about-section" className="text-gray-400 hover:text-gray-100">
+//             About Us
+//           </a>
+//           <a href="/events" className="text-gray-400 hover:text-gray-100">
+//             Events
+//           </a>
+//           <a href="https://wa.me/+971503665518" target="_blank" className="text-gray-400 hover:text-gray-100">
+//             Contact Us
+//           </a>
+//         </div>
+//       </div>
+
+//       {/* Separator */}
+//       <hr className="my-6 border-gray-700" />
+
+//       {/* Social Media and Copyright Section */}
+//       <div className="flex flex-col lg:flex-row items-center justify-between">
+//         {/* Copyright */}
+//         <div className="text-center lg:text-left text-gray-500 text-sm mb-4 lg:mb-0">
+//           <p>© Catering Service. All rights reserved.</p>
+//         </div>
+
+//         {/* Social Media Icons */}
+//         <div className="flex gap-4">
+//           <a href="https://www.instagram.com/rukn_aldyafa/"
+//             target="_blank"
+//             rel="noopener noreferrer"
+//             className="bg-gray-800 hover:bg-gray-700 rounded-full h-10 w-10 flex items-center justify-center">
+//             <FaInstagram className="text-white text-xl" />
+//           </a>
+//           <a href="https://wa.me/+971503665518"
+//             target="_blank"
+//             rel="noopener noreferrer"
+//             className="bg-gray-800 hover:bg-gray-700 rounded-full h-10 w-10 flex items-center justify-center">
+//             <FaWhatsapp className="text-white text-xl" />
+//           </a>
+//           <a href="https://www.snapchat.com/add/ruknaldyafa?sender_web_id=f7b1dbb5-c3c0-48c6-a15b-058b0e4429dc&device_type=desktop&is_copy_url=true"
+//             target="_blank"
+//             rel="noopener noreferrer"
+//             className="bg-gray-800 hover:bg-gray-700 rounded-full h-10 w-10 flex items-center justify-center">
+//             <FaSnapchat className="text-white text-xl" />
+//           </a>
+//         </div>
+//       </div>
+//     </footer>
+//   );
+// }
+
+// export default Footer;
+
+
+
+
+
+
+
+
+
+//////////////////////////// ARABIC TRANSLATED //////////////////////////////////////////////////////////////////////////////////
 import React from "react";
 import { FaInstagram, FaWhatsapp, FaSnapchat } from "react-icons/fa";
 
-function Footer() {
+// Translations object
+const translations = {
+  english: {
+    brand: "Rukn Al-Dyafa",
+    home: "Home",
+    services: "Services",
+    gallery: "Gallery",
+    aboutUs: "About Us",
+    events: "Events",
+    contactUs: "Contact Us",
+    copyright: "© Catering Service. All rights reserved."
+  },
+  arabic: {
+    brand: "ركن الضيافة",
+    home: "الرئيسية",
+    services: "الخدمات",
+    gallery: "المعرض",
+    aboutUs: "من نحن",
+    events: "الفعاليات",
+    contactUs: "اتصل بنا",
+    copyright: "© خدمة تقديم الطعام. جميع الحقوق محفوظة."
+  },
+};
+
+function Footer({ language = "english" }) {
+  const t = translations[language] || translations.english;
+
   return (
     <footer className="bg-gray-900 text-white w-full p-6 md:p-8">
       {/* Branding Section */}
@@ -14,33 +125,24 @@ function Footer() {
 
       {/* Navigation Links */}
       <div className="mt-6 flex justify-center lg:justify-end">
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-3 text-center lg:text-left">
-          <a href="#home" className="text-gray-400 hover:text-gray-100">
-            Home
+        <div className="grid grid-cols-3 gap-4 lg:grid-cols-3 text-center lg:text-left">
+          <a href="/" className="text-gray-400 hover:text-gray-100">
+            {t.home}
           </a>
-          <a href="#services" className="text-gray-400 hover:text-gray-100">
-            Services
+          <a href="/luxury-services" className="text-gray-400 hover:text-gray-100">
+            {t.services}
           </a>
-          <a href="#about" className="text-gray-400 hover:text-gray-100">
-            About Us
+          <a href="/capture-moments" className="text-gray-400 hover:text-gray-100">
+            {t.gallery}
           </a>
-          <a href="#menu" className="text-gray-400 hover:text-gray-100">
-            Menu
+          <a href="/about-section" className="text-gray-400 hover:text-gray-100">
+            {t.aboutUs}
           </a>
-          <a href="#events" className="text-gray-400 hover:text-gray-100">
-            Events
+          <a href="/events" className="text-gray-400 hover:text-gray-100">
+            {t.events}
           </a>
-          <a href="#testimonials" className="text-gray-400 hover:text-gray-100">
-            Testimonials
-          </a>
-          <a href="#gallery" className="text-gray-400 hover:text-gray-100">
-            Gallery
-          </a>
-          <a href="#contact" className="text-gray-400 hover:text-gray-100">
-            Contact Us
-          </a>
-          <a href="#faq" className="text-gray-400 hover:text-gray-100">
-            FAQ
+          <a href="https://wa.me/+971503665518" target="_blank" className="text-gray-400 hover:text-gray-100">
+            {t.contactUs}
           </a>
         </div>
       </div>
@@ -52,12 +154,13 @@ function Footer() {
       <div className="flex flex-col lg:flex-row items-center justify-between">
         {/* Copyright */}
         <div className="text-center lg:text-left text-gray-500 text-sm mb-4 lg:mb-0">
-          <p>© Catering Service. All rights reserved.</p>
+          <p>{t.copyright}</p>
         </div>
 
         {/* Social Media Icons */}
         <div className="flex gap-4">
-          <a href="https://www.instagram.com/rukn_aldyafa/"
+          <a
+            href="https://www.instagram.com/rukn_aldyafa/"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-gray-800 hover:bg-gray-700 rounded-full h-10 w-10 flex items-center justify-center"
@@ -65,7 +168,7 @@ function Footer() {
             <FaInstagram className="text-white text-xl" />
           </a>
           <a
-            href="https://wa.me/yourphonenumber"
+            href="https://wa.me/+971503665518"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-gray-800 hover:bg-gray-700 rounded-full h-10 w-10 flex items-center justify-center"
@@ -73,7 +176,7 @@ function Footer() {
             <FaWhatsapp className="text-white text-xl" />
           </a>
           <a
-            href="https://www.snapchat.com/add/yourusername"
+            href="https://www.snapchat.com/add/ruknaldyafa?sender_web_id=f7b1dbb5-c3c0-48c6-a15b-058b0e4429dc&device_type=desktop&is_copy_url=true"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-gray-800 hover:bg-gray-700 rounded-full h-10 w-10 flex items-center justify-center"
