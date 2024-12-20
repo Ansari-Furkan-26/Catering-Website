@@ -2,7 +2,18 @@ import React from "react";
 import About from '../components/About';
 import Gallery from '../components/Gallery';
 
-const AboutSection = () => {
+const AboutSection = ({ language = "english" }) => {
+  const translations = {
+    english: {
+      header: "Capture the Moment",
+      paragraph: "Preserving your most cherished moments, one event at a time. Let us bring your celebrations to life with exquisite catering and attention to detail."
+    },
+    arabic: {
+      header: "التقط اللحظة",
+      paragraph: "نحن نحتفظ بأغلى لحظاتك، في كل مناسبة على حدة. دعنا نجعل احتفالاتك حية مع خدمة تقديم الطعام الفاخرة والاهتمام بالتفاصيل."
+    }
+  };
+
   return (
     <div className="bg-gray-100 min-h-screen" id="ExploreMoment">
       {/* Header */}
@@ -15,18 +26,19 @@ const AboutSection = () => {
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative text-center text-white px-4">
-          <h2 className="text-3xl font-bold mb-4">Capture the Moment</h2>
+          <h2 className="text-3xl font-bold mb-4">
+            {translations[language].header}
+          </h2>
           <p className="text-lg">
-            Preserving your most cherished moments, one event at a time. Let us bring your celebrations to life with exquisite catering and attention to detail.
+            {translations[language].paragraph}
           </p>
         </div>
       </section> 
-      <About />    
-      <Gallery />
-     
+      
+      <About language={language} />
+      <Gallery language={language} />
     </div>
   );
 };
 
 export default AboutSection;
-

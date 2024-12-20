@@ -55,7 +55,7 @@ const Navbar = ({ mobileMenuOpen, setMobileMenuOpen, language, toggleLanguage })
         {/* Mobile Menu Button */}
         <div className="flex lg:hidden items-center gap-4">
           <button onClick={toggleLanguage}
-            className="flex items-center gap-2 text-white text-lg border-2 border-transparent px-2 py-0 rounded-md hover:bg-yellow-500 hover:text-black transition"
+            className="flex items-center gap-2 text-white text-lg border-2 border-transparent px-2 py-0 rounded-md active:bg-gray-200 active:text-gray-900 transition"
             aria-label="Toggle Language">
             <MdLanguage className="text-2xl" />
             {language === "english" ? "Eng" : "Ara"}
@@ -69,7 +69,7 @@ const Navbar = ({ mobileMenuOpen, setMobileMenuOpen, language, toggleLanguage })
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="hidden lg:flex lg:gap-x-12 active:">
           {navigation[language].map((item) => (
             <Link key={item.name} to={item.href} className="text-sm font-semibold text-gray-100">
               {item.name}
@@ -79,7 +79,7 @@ const Navbar = ({ mobileMenuOpen, setMobileMenuOpen, language, toggleLanguage })
 
         {/* Contact Dropdown and Language Toggle */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-4">
-          <button onClick={toggleLanguage} className="flex items-center gap-2 text-white text-sm font-semibold border-transparent px-3 py-1 rounded-md hover:bg-yellow-500 hover:text-black transition">
+          <button onClick={toggleLanguage} className="flex items-center gap-2 text-white text-sm font-semibold border-transparent px-3 py-1 rounded-md active:bg-gray-200 active:text-gray-900  transition">
             <MdLanguage />{language === "english" ? "English" : "العربية"}
           </button>
           

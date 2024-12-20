@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
@@ -41,7 +42,55 @@ const coldBeverages = [
   "Coconut Water | ماء جوز الهند",
 ];
 
-const Cart = ({ selectedPackage, selectedPackagePrice  }) => {
+const translations = {
+  english: {
+    header: "Cart Summary",
+    HotDrink: "Hot Drinks",
+    ColdDrink: "Cold Drinks",
+    select: "Selected Package",
+    title: "Package Title",
+    price: "Package Price",
+    drinks: "Drinks",
+    Charges: "Delivery Charges",
+    total: "Total",
+    clientEntries: "Client Entries",
+    name: "Name",
+    email: "Email",
+    city: "City",
+    phone: "Phone",
+    guests: "Number of Guests",
+    eventDate: "Event Date",
+    thankYouTitle: "🎉 Thank You!",
+    thankYouMessage: "Your order has been successfully submitted. We will reach out to you shortly.",
+    specialOffer: "Special Offer: Order Package 3 or higher and get a complimentary Beverage or Perfume with your order.",
+    order: "Order Now",
+  },
+  arabic: {
+    header: "ملخص العربة",
+    HotDrink: "المشروبات الساخنة",
+    ColdDrink: "المشروبات الباردة",
+    select: "الحزمة المختارة",
+    title: "عنوان الحزمة",
+    price: "سعر الباقة",
+    drinks: "مشروبات",
+    Charges: "رسوم التوصيل",
+    total: "المجموع",
+    clientEntries: "بيانات العميل",
+    name: "الاسم",
+    email: "البريد الإلكتروني",
+    city: "المدينة",
+    phone: "الهاتف",
+    guests: "عدد الضيوف",
+    eventDate: "تاريخ الحدث",
+    thankYouTitle: "🎉 شكراً!",
+    thankYouMessage: "تم إرسال طلبك بنجاح. سنصل إليك قريبًا.",
+    specialOffer: "عرض خاص: اطلب حزمة 3 أو أكثر واحصل على مشروب أو عطر مجاني مع طلبك.",
+    order: "اطلب الآن",
+  },
+};
+
+
+const Cart = ({ selectedPackage, selectedPackagePrice , language }) => {
   const location = useLocation();
   const formData = location.state?.formData || {};
   const [selectedDrinks, setSelectedDrinks] = useState([]);
@@ -74,6 +123,9 @@ const Cart = ({ selectedPackage, selectedPackagePrice  }) => {
       prevDrinks.filter((_, index) => index !== indexToRemove)
     );
   };
+ 
+    // Dynamically get the translation for the current language
+    const t = translations[language] || translations.english;
 
   const calculateTotal = () => {
     const drinksTotal = selectedDrinks.reduce((sum, drink) => sum + drink.price, 0);
@@ -124,17 +176,15 @@ const Cart = ({ selectedPackage, selectedPackagePrice  }) => {
       <img 
         src="https://i.pinimg.com/736x/74/fa/f7/74faf76a2616f4f776cf157c18a09d77.jpg" 
         alt="Package Image" 
-        className="object-cover max-h-full w-full rounded-xl"
-      />
-    </div>
+        className="object-cover max-h-full w-full rounded-xl"/>
+      </div>
       <div className="max-w-6xl w-full bg-gray-50 rounded-lg p-8">
-        <h1 className="text-2xl font-bold text-center">Cart Summary</h1>
-
+        <h1 className="text-2xl font-bold text-center">{t.header}</h1>
         {/* Drink Selection */}
       <div className="flex justify-between items-center m-6">
         <div className="w-1/2 mr-4">
           <label htmlFor="hotDrink" className="block text-sm font-medium mb-2">
-            Hot Drink
+            {t.HotDrink}
           </label>
           <select
             id="hotDrink"
@@ -151,7 +201,7 @@ const Cart = ({ selectedPackage, selectedPackagePrice  }) => {
         </div>
         <div className="w-1/2">
           <label htmlFor="coldDrink" className="block text-sm font-medium mb-2">
-            Cold Drink
+          {t.ColdDrink}
           </label>
           <select
             id="coldDrink"
@@ -167,23 +217,22 @@ const Cart = ({ selectedPackage, selectedPackagePrice  }) => {
           </select>
         </div>
       </div>
-
       
         {/* Selected Package Details */}
         {selectedPackage && selectedPackagePrice && (
           <div className="border rounded-lg p-4 my-6 bg-gray-50">
-            <h2 className="text-xl font-semibold mb-4">Selected Package</h2>
+            <h2 className="text-xl font-semibold mb-4">{t.select}</h2>
             <div className="flex justify-between border-b pb-2">
-              <span className="font-medium">Package Title:</span>
+              <span className="font-medium">{t.title}:</span>
               <span>{selectedPackage}</span>
             </div>
             <div className="flex justify-between border-b pb-2">
-              <span className="font-medium">Package Price:</span>
+              <span className="font-medium">{t.price}:</span>
               <span>{selectedPackagePrice} AED</span>
             </div>
             {selectedDrinks.length > 0 && (
           <div className="mb-4">
-            <h3 className="font-semibold mb-2">Drinks:</h3>
+            <h3 className="font-semibold mb-2">{t.drinks}:</h3>
             {/* Selected Drinks Details */}
             {selectedDrinks.map((drink, index) => (
               <div key={index} className="flex justify-between items-center border-b pb-2">
@@ -209,29 +258,29 @@ const Cart = ({ selectedPackage, selectedPackagePrice  }) => {
         
         {/* Delivery Charges */}
         <div className="flex justify-between mt-4 text-lg">
-          <span>Delivery Charges:</span>
+          <span>{t.Charges}:</span>
           <span>
             {DELIVERY_CHARGES[formData.city] === 0 ? "Free" : `${DELIVERY_CHARGES[formData.city]} AED`}
           </span>
         </div>
 
         <div className="flex justify-between mt-4 text-lg font-bold">
-          <span>Total:</span>
+          <span>{t.total}:</span>
           <span>{calculateTotal()} AED</span>
         </div>
         
         
         {/* Client Entries Section */}
         <div className="border rounded-lg p-4 my-6 bg-gray-50">
-          <h2 className="text-xl font-semibold mb-4">Client Entries</h2>
+          <h2 className="text-xl font-semibold mb-4">{t.clientEntries}</h2>
           <div className="space-y-2">
-            {[
-              { label: "Name", value: formData.name },
-              { label: "Email", value: formData.email },
-              { label: "City", value: formData.city },
-              { label: "Phone", value: formData.phone },
-              { label: "Number of Guests", value: formData.guests },
-              { label: "Event Date", value: formData.eventDate },
+            {[ 
+              { label: t.name, value: formData.name },
+              { label: t.email, value: formData.email },
+              { label: t.city, value: formData.city },
+              { label: t.phone, value: formData.phone },
+              { label: t.guests, value: formData.guests },
+              { label: t.eventDate, value: formData.eventDate },
             ].map((item, index) => (
               <div key={index} className="flex justify-between border-b pb-2">
                 <span className="font-medium">{item.label}:</span>
@@ -241,24 +290,23 @@ const Cart = ({ selectedPackage, selectedPackagePrice  }) => {
           </div>
         </div>
 
-        <div className="text-left my-5 rounded-lg">
+        {/* <div className="text-left my-5 rounded-lg">
         <p><strong>Special Offer: </strong><br /> Order Package 3 or higher and get a complimentary Beverage or Perfume with your order.</p>
-      </div>
+      </div> */}
 
         {/* Place Order Button */}
         <button
           className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-green-600"
-          onClick={handleOrderSubmit}
-        >
-          Order Now
+          onClick={handleOrderSubmit}>
+          {t.order}
         </button>
 
         {/* Thank You Popup */}
         {showThankYouPopup && (
           <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center z-50">
             <div className="bg-white p-6 rounded-lg shadow-lg w-96">
-              <h2 className="text-2xl font-semibold mb-4">🎉 Thank You!</h2>
-              <p>Your order has been successfully submitted. We will reach out to you shortly.</p>
+              <h2 className="text-2xl font-semibold mb-4">{t.thankYouTitle}</h2>
+              <p>{t.thankYouMessage}</p>
               <button
                 className="mt-4 bg-blue-500 text-white p-2 rounded-md hover:bg-blue-700"
                 onClick={() => setShowThankYouPopup(false)}

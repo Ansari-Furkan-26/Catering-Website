@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const OrderForm = () => {
+const OrderForm = ({ language = "english" }) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
@@ -10,7 +10,7 @@ const OrderForm = () => {
     phone: '',
     guests: 1,
     eventDate: '',
-    deliveryCharge: 0, // Add deliveryCharge to formData
+    deliveryCharge: 0,
   });
 
   // City to delivery charge mapping
@@ -59,6 +59,29 @@ const OrderForm = () => {
     </div>
   );
 
+  const translations = {
+    english: {
+      title: "How would you like to get your order?",
+      name: "Name",
+      email: "Email",
+      city: "City",
+      phone: "Phone Number",
+      guests: "Number of Guests",
+      eventDate: "Date of Event",
+      submitButton: "View Our Package Details",
+    },
+    arabic: {
+      title: "كيف ترغب في استلام طلبك؟",
+      name: "الاسم",
+      email: "البريد الإلكتروني",
+      city: "المدينة",
+      phone: "رقم الهاتف",
+      guests: "عدد الضيوف",
+      eventDate: "تاريخ الحدث",
+      submitButton: "عرض تفاصيل الباقة",
+    }
+  };
+
   // Check if all fields are filled
   const isFormValid = Object.values(formData).every((field) => field !== '' || field === 0);
 
@@ -67,13 +90,14 @@ const OrderForm = () => {
       <div className="max-w-6xl w-full bg-white rounded-lg shadow-xl flex flex-col md:flex-row">
         {/* Left: Order Information Form */}
         <div className="w-full md:w-1/2 p-8">
-          <h2 className="text-2xl font-semibold mb-6">How would you like to get your order?</h2>
+          <h2 className="text-2xl font-semibold mb-6">
+            {translations[language].title}
+          </h2>
           <form onSubmit={handleSubmit}>
-            {renderInput('Name', 'name')}
-            {renderInput('Email', 'email', 'email')}
-
+            {renderInput(translations[language].name, 'name')}
+            {renderInput(translations[language].email, 'email', 'email')}
             <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700">City</label>
+              <label className="block text-sm font-medium text-gray-700">{translations[language].city}</label>
               <select
                 name="city"
                 value={formData.city}
@@ -81,7 +105,7 @@ const OrderForm = () => {
                 required
                 className="mt-1 p-2 w-full border rounded-lg bg-transparent text-gray-700"
               >
-                <option value="">Select City</option>
+                <option value="">{translations[language].city}</option>
                 {cities.map((city) => (
                   <option key={city} value={city}>
                     {city}
@@ -89,36 +113,17 @@ const OrderForm = () => {
                 ))}
               </select>
             </div>
+            {renderInput(translations[language].phone, 'phone', 'tel')}
+            {renderInput(translations[language].guests, 'guests', 'number', { min: 1 })}
+            {renderInput(translations[language].eventDate, 'eventDate', 'date')}
 
-            {/* Show delivery charge */}
-            {/* {formData.city && (
-              <div className="mb-4">
-                <label className="block text-sm font-medium text-gray-700">Delivery Charge</label>
-                <div className="mt-1 p-2 w-full border rounded-lg bg-gray-100 text-gray-700">
-                  {`AED ${formData.deliveryCharge}`}
-                </div>
-              </div>
-            )} */}
-
-            {renderInput('Phone Number', 'phone', 'tel')}
-            {renderInput('Number of Guests', 'guests', 'number', { min: 1 })}
-            {renderInput('Date of Event', 'eventDate', 'date')}
-
-             {/* Submit Button */}
-             <div className="flex justify-center mb-4">
-              {/* <button 
-                type="submit" 
-                className={`bg-blue-500 text-white p-2 rounded-md w-full hover:bg-green-600 ${!isFormValid ? 'opacity-50 cursor-not-allowed' : ''}`} 
-                 disabled={!isFormValid} // Disabled button until all fields are filled
-              >
-                View Our Package Details
-              </button> */}
+            <div className="flex justify-center mb-4">
               <button
                 type="submit"
                 className="bg-blue-500 text-white p-2 rounded-md w-full hover:bg-green-600"
                 disabled={false} // Enable the button
               >
-                View Our Package Details
+                {translations[language].submitButton}
               </button>
             </div>
           </form>

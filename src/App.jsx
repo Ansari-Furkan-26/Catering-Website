@@ -28,14 +28,14 @@ export default function Example() {
       <Navbar language={language} toggleLanguage={toggleLanguage} mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
         <Routes>
           <Route path="/" element={<HeroSection language={language}/>} />
-          <Route path="/events" element={<Event />} />
-          <Route path="/about-section" element={<AboutSection />} />
-          <Route path="/luxury-services" element={<LuxuryServices />} />
-          <Route path="/capture-moments" element={<CapturedMoment />} />
-          <Route path="/checkout" element={<Checkout />} />    
+          <Route path="/events" element={<Event  language={language} />} />
+          <Route path="/about-section" element={<AboutSection language={language}/>} />
+          <Route path="/luxury-services" element={<LuxuryServices language={language} />} />
+          <Route path="/capture-moments" element={<CapturedMoment language={language} />} />
+          <Route path="/checkout" element={<Checkout language={language} />} />    
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <Footer />
+        <Footer language={language} />
       </BrowserRouter>
       
     </div>

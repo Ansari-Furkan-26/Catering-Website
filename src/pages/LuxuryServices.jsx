@@ -2,7 +2,20 @@ import React, { Suspense } from "react";
 import OrderForm from "../components/OrderForm";
 import PromoBanner from "../components/PromoBanner";
 
-const LuxuryServices = () => {
+const LuxuryServices = ({ language = "english" }) => {
+  const translations = {
+    english: {
+      heading: "Experience luxury with our premium drink selection",
+      paragraph:
+        "At Rukn Al Dyafa, we deliver the elegance of traditional hospitality through luxurious catering.",
+    },
+    arabic: {
+      heading: "اختبر الفخامة مع اختيار مشروباتنا الفاخرة",
+      paragraph:
+        " في ركن الضيافة، نقدم أناقة الضيافة التقليدية من خلال تقديم الطعام الفاخر.",
+    },
+  };
+
   return (
     <div>
       {/* Hero Section */}
@@ -21,21 +34,20 @@ const LuxuryServices = () => {
         <div className="relative text-left md:text-center text-white flex flex-col items-start md:items-center justify-center h-full">
           {/* Animated Heading */}
           <h1 className="text-2xl sm:text-4xl md:text-3xl font-bold leading-tight">
-            Experience luxury with our premium drink selection
+            {translations[language].heading}
           </h1>
 
           {/* Animated Paragraph */}
           <p className="mt-4 text-sm sm:text-lg md:text-xl italic max-w-2xl">
-            At Rukn Al Dyafa, we deliver the elegance of traditional hospitality
-            through luxurious catering.
+            {translations[language].paragraph}
           </p>
         </div>
       </div>
 
       {/* Suspense wrapper to load lazy components */}
       <Suspense fallback={<div>Loading...</div>}>
-        <OrderForm />
-        <PromoBanner />
+        <OrderForm language={language} />
+        <PromoBanner language={language} />
       </Suspense>
     </div>
   );

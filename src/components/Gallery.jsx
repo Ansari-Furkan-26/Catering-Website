@@ -18,10 +18,21 @@ const images = [
   { src: IMG7, alt: "Team Member 7" },
 ];
 
-const ImageGallery = () => {
+const ImageGallery = ({ language = "english" }) => {
+  const translations = {
+    english: {
+      heading: "Our Team",
+    },
+    arabic: {
+      heading: "فريقنا",
+    },
+  };
+
   return (
     <div className="pb-10 bg-gray-100">
-      <h2 className="text-3xl font-bold text-center mb-6">Our Team</h2>
+      <h2 className="text-3xl font-bold text-center mb-6">
+        {translations[language].heading}
+      </h2>
       <div className="overflow-x-auto">
         <div className="flex gap-4 justify-center md:justify-start">
           {images.map((image, index) => (

@@ -31,7 +31,23 @@ const LazyImage = ({ src, alt, className }) => (
   <LazyLoadImage src={src} alt={alt} effect="blur" className={className} />
 );
 
-const Gallery = () => {
+const Gallery = ({ language = "english" }) => {
+  // Translations for dual language support
+  const translations = {
+    english: {
+      header: "Capture the joy of every sip",
+      description: "Preserving your most cherished moments, one event at a time. Let us bring your celebrations to life with exquisite catering and attention to detail.",
+      sectionTitle: "Catering Experience",
+      sectionDescription: "Explore a dynamic showcase of our culinary artistry, where each beverage tells a story, and every event is designed to offer a flavorful, memorable journey. Dive into the world of taste and creativity, and let us bring your next celebration to life with our personalized catering services."
+    },
+    arabic: {
+      header: "التقط فرحة كل رشفة",
+      description: "نحن نحفظ لحظاتك الثمينة، حدثًا تلو الآخر. دعونا نجعل احتفالاتك حية مع خدمة تقديم الطعام الفاخرة والاهتمام بالتفاصيل.",
+      sectionTitle: "تجربة تقديم الطعام",
+      sectionDescription: "استكشف عرضًا ديناميكيًا لفن الطهي لدينا، حيث تروي كل مشروب قصة، وكل حدث مصمم لتقديم رحلة لذيذة ولا تُنسى. اغمر في عالم النكهة والإبداع، ودعنا نجعل احتفالك القادم ينبض بالحياة مع خدمات تقديم الطعام المخصصة لدينا."
+    }
+  };
+
   // Create an array of imported images
   const images = [
     IMG1, IMG2, IMG3, IMG4, IMG5, IMG6, IMG7, IMG8, IMG9, IMG10,
@@ -43,14 +59,13 @@ const Gallery = () => {
   const galleryImages = images.map((src, index) => ({
     id: index + 1,
     src,
-    title: `Project ${index + 1}`,
-    description: `Description for Project ${index + 1}`,
+    title: `${translations[language].sectionTitle} ${index + 1}`,
+    description: `Description for Project ${index + 1}`
   }));
 
   return (
     <div className="bg-gray-100 min-h-screen">
       {/* Header */}
-      {/* Background image and text about capturing moments */}
       <section
         className="relative bg-cover bg-center h-[500px] flex items-center justify-center"
         style={{
@@ -59,18 +74,16 @@ const Gallery = () => {
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative text-center text-white px-4">
-          <h2 className="text-3xl font-bold mb-4">Capture the joy of every sip</h2>
-          <p className="text-lg">
-            Preserving your most cherished moments, one event at a time. Let us bring your celebrations to life with exquisite catering and attention to detail.
-          </p>
+          <h2 className="text-3xl font-bold mb-4">{translations[language].header}</h2>
+          <p className="text-lg">{translations[language].description}</p>
         </div>
       </section>
 
       {/* Header */}
       <header className="flex flex-col items-center justify-center text-center text-gray-800 pt-14 pb-8">
-        <h1 className="text-3xl font-bold mb-2">Catering Experience</h1>
+        <h1 className="text-3xl font-bold mb-2">{translations[language].sectionTitle}</h1>
         <h2 className="px-2 text-sm max-w-3xl lg:text-md text-gray-600">
-          Explore a dynamic showcase of our culinary artistry, where each beverage tells a story, and every event is designed to offer a flavorful, memorable journey. Dive into the world of taste and creativity, and let us bring your next celebration to life with our personalized catering services.
+          {translations[language].sectionDescription}
         </h2>
       </header>
 

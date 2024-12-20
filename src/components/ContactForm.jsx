@@ -1,6 +1,27 @@
 import React, { useState } from 'react';
 
-const CheckoutPage = () => {
+const translations = {
+  english: {
+    header: 'How would you like to get your order?',
+    fullName: 'Full Name',
+    mobileNo: 'Mobile No.',
+    email: 'Email',
+    address: 'Address',
+    message: 'Message',
+    submit: 'Submit',
+  },
+  arabic: {
+    header: "كيف ترغب في استلام طلبك؟",
+    fullName: 'الاسم الكامل',
+    mobileNo: 'رقم الجوال',
+    email: 'بريد إلكتروني',
+    address: 'عنوان',
+    message: 'رسالة',
+    submit: 'إرسال',
+  },
+};
+
+const CheckoutPage = ({ language }) => {
   const [formData, setFormData] = useState({
     fullName: '',
     mobileNo: '',
@@ -31,17 +52,19 @@ const CheckoutPage = () => {
     window.open(whatsappUrl, '_blank');
   };
 
+  const t = translations[language] || translations.english;
+
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100" id='Book'>
       <div className="max-w-6xl w-full bg-white rounded-lg shadow-xl flex flex-col md:flex-row">
         <div className="w-full md:w-1/2 p-8">
-          <h2 className="text-2xl font-semibold mb-6">How would you like to get your order?</h2>
+          <h2 className="text-2xl font-semibold mb-6">{t.header}</h2>
 
           <form onSubmit={handleSubmit}>
             {['fullName', 'mobileNo', 'email', 'address', 'message'].map((field) => (
               <div className="mb-4" key={field}>
                 <label htmlFor={field} className="block text-sm font-medium text-gray-700">
-                  {field.charAt(0).toUpperCase() + field.slice(1).replace(/([A-Z])/g, ' $1')}
+                  {t[field]}
                 </label>
                 <input
                   type={field === 'email' ? 'email' : field === 'mobileNo' ? 'number' : 'text'}
@@ -51,13 +74,11 @@ const CheckoutPage = () => {
                   required
                   className="w-full mt-1 p-2 border border-gray-300 rounded-lg"
                 />
-                
               </div>
-              
             ))}
             
             <button type="submit" className="w-full py-2 bg-blue-600 text-white rounded-lg">
-              Submit
+              {t.submit}
             </button>
           </form>
         </div>

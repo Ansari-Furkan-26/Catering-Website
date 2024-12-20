@@ -2,7 +2,23 @@ import React from "react";
 import { motion } from "framer-motion";
 import Intro from "../assets/Intro.mp4";
 
-const VideoBackground = () => {
+const VideoBackground = ({ language }) => {
+  // Text translations for English and Arabic
+  const translations = {
+    english: {
+      heading: "Experience elegance and flavors that speak for themselves",
+      paragraph: "Ready to indulge? Explore our menu.",
+      button: "Explore",
+    },
+    arabic: {
+      heading: "اكتشف الأناقة والنكهات التي تتحدث عن نفسها",
+      paragraph: "هل أنت مستعد للاستمتاع؟ استعرض قائمتنا.",
+      button: "يستكشف",
+    },
+  };
+
+  const t = translations[language] || translations.english;
+
   return (
     <div className="relative h-screen" id="Event">
       {/* Video Background (commented out for now) */}
@@ -40,7 +56,7 @@ const VideoBackground = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Experience elegance and flavors that speak for themselves
+            {t.heading}
           </motion.h1>
           <motion.p
             className="mt-4 text-xl"
@@ -48,7 +64,7 @@ const VideoBackground = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Ready to indulge? Explore our menu.
+            {t.paragraph}
           </motion.p>
           <a href="capture-moments">
             <motion.button
@@ -56,7 +72,7 @@ const VideoBackground = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              Explore
+              {t.button}
             </motion.button>
           </a>
         </motion.div>

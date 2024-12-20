@@ -135,13 +135,13 @@ const CateringHeroSection = ({ language }) => {
         </section>
       </div>
 
-      <About />
-      <VideoBackground />
-      <Plans />
-      <BlogSection />
-      <Testimonial />
-      <Form />
-      <PromoBanner />
+      <About language={language} />
+      <VideoBackground language={language} />
+      <Plans language={language} />
+      <BlogSection language={language} />
+      <Testimonial language={language} />
+      <Form language={language} />
+      <PromoBanner language={language} />
     </div>
   );
 };
