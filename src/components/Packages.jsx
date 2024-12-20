@@ -63,17 +63,17 @@ const translations = {
     header: "حدد الحزمة",
     select: "اختر الحزمة",
     hotDrinks: [
-      "قهوة عربية أو قهوة تركية",
+      "القهوة العربية او القهوة التركية",
       "شاي كرك",
-      "حبة الحمرا",
-      "فستق مع حليب",
-      "شاي أسود"
+      "ححبة الحمراء بالكاستر",
+      "حليب بالفستق",
+      "شاي احمر"
     ],
     coldDrinks: [
-      "لاتيه إسباني",
-      "موهيتو ليمون نعناع",
-      "موهيتو توت أزرق",
-      "الكركديه",
+      "سبانيش لاتيه",
+      "موهيتو ليمون بالنعناع",
+      "موهيتو بلو بيري",
+      "كركديه",
       "فالودة"
     ],
     packages: [
@@ -240,13 +240,14 @@ const PackShowcase2 = ({ onSelectPackage, language }) => {
                       {product.price}
                     </span>
                     <button
-                      className="bg-blue-500 text-white rounded px-8 py-2 hover:bg-green-500"
-                      onClick={() => {
-                        onSelectPackage(product.title, product.price);
-                      }}
-                    >
-                      {t.select}
-                    </button>
+                    className="bg-blue-500 text-white rounded px-8 py-2 hover:bg-green-500"
+                    onClick={() => {
+                      onSelectPackage(product.title, product.price);
+                      // handleSelectPackage(); // Ensure both functions are called
+                    }}
+                  >
+                    {t.select}
+                  </button>
                   </div>
                 </div>
               </motion.div>
@@ -255,7 +256,7 @@ const PackShowcase2 = ({ onSelectPackage, language }) => {
         </div>
       </div>
 
-      {/* Cart Popup */}
+      {/* Cart Popup */}  
       {isPopupVisible && (
         <div className="fixed inset-x-0 bottom-0 bg-opacity-80 flex justify-center items-center z-50">
           <div className="bg-gray-800 text-white rounded-t-lg p-4 w-full max-w-lg flex items-center justify-between shadow-lg">

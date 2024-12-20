@@ -58,7 +58,7 @@ const CheckoutPage = ({ language }) => {
     <div className="flex justify-center items-center min-h-screen bg-gray-100" id='Book'>
       <div className="max-w-6xl w-full bg-white rounded-lg shadow-xl flex flex-col md:flex-row">
         <div className="w-full md:w-1/2 p-8">
-          <h2 className="text-2xl font-semibold mb-6">{t.header}</h2>
+          <h2 className="text-2xl font-semibold mb-6">{t.header}</h2> 
 
           <form onSubmit={handleSubmit}>
             {['fullName', 'mobileNo', 'email', 'address', 'message'].map((field) => (

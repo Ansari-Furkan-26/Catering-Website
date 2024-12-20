@@ -8,7 +8,7 @@ const BlogSection = ({ language }) => {
 
   const translations = {
     english: {
-      title: "Catering Insights and Inspiration",
+      title: "Hospitality Insights and Inspiration",
       description:
         "Explore the world of gourmet catering, from tantalizing seasonal menus to the artistry of event presentation.",
       buttonText: "Explore All Blogs",
@@ -21,7 +21,7 @@ const BlogSection = ({ language }) => {
       readTime: "5 min read", // English text for read time
     },
     arabic: {
-      title: "إلهام ورؤى الضيافة",
+      title: "رؤى وإلهام في مجال الضيافة",
       description:
         "استكشف عالم الضيافة الفاخرة، من قوائم الطعام الموسمية المدهشة إلى فن تقديم الفعاليات.",
       buttonText: "استكشاف جميع المدونات",

@@ -272,23 +272,25 @@ const Cart = ({ selectedPackage, selectedPackagePrice , language }) => {
         
         {/* Client Entries Section */}
         <div className="border rounded-lg p-4 my-6 bg-gray-50">
-          <h2 className="text-xl font-semibold mb-4">{t.clientEntries}</h2>
-          <div className="space-y-2">
-            {[ 
-              { label: t.name, value: formData.name },
-              { label: t.email, value: formData.email },
-              { label: t.city, value: formData.city },
-              { label: t.phone, value: formData.phone },
-              { label: t.guests, value: formData.guests },
-              { label: t.eventDate, value: formData.eventDate },
-            ].map((item, index) => (
-              <div key={index} className="flex justify-between border-b pb-2">
-                <span className="font-medium">{item.label}:</span>
-                <span>{item.value || "N/A"}</span>
-              </div>
-            ))}
-          </div>
+        <h2 className="text-xl font-semibold mb-4">{t.clientEntries}</h2>
+        <div className="space-y-2">
+          {[ 
+            { label: t.name, value: formData.name },
+            { label: t.email, value: formData.email },
+            { label: t.city, value: formData.city },
+            { label: t.phone, value: formData.phone },
+            { label: t.guests, value: formData.guests },
+            { label: t.eventDate, value: formData.eventDate },
+          ].map((item, index) => (
+            <div key={index} className="flex justify-between border-b pb-2">
+              <span className="font-medium">{item.label}:</span>
+              <span className="truncate max-w-xs md:max-w-full">
+                {item.label === t.email && item.value ? item.value.split('@')[0] + '...' : item.value || "N/A"}
+              </span>
+            </div>
+          ))}
         </div>
+      </div>
 
         {/* <div className="text-left my-5 rounded-lg">
         <p><strong>Special Offer: </strong><br /> Order Package 3 or higher and get a complimentary Beverage or Perfume with your order.</p>

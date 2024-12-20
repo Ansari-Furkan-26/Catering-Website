@@ -53,8 +53,7 @@ const Checkout = ({ language }) => {
       </div>
 
       <PackShowcase2 onSelectPackage={handlePackageSelection} language={language} />
-      <Cart selectedPackage={selectedPackage}
-        selectedPackagePrice={selectedPackagePrice} language={language} />
+      <Cart selectedPackage={selectedPackage} selectedPackagePrice={selectedPackagePrice} language={language} />
     </div>
   );
 };
