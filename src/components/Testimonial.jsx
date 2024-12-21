@@ -104,7 +104,7 @@ function TestimonialSection({ language }) {
   };
 
   return (
-    <div className="bg-gray-100 px-4">
+    <div className="bg-gray-100 pb-4 px-4">
       {/* Testimonial Heading */}
       <motion.h2
         className="text-2xl md:text-4xl font-bold text-gray-900 text-center mb-8"

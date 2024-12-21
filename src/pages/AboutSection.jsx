@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import About from '../components/About';
-import Gallery from '../components/Gallery';
+import Gallery from '../components/ImageGallery';
+
+// useEffect(() => {
+//   document.title = 'My Webrecto'; // Quick solution
+// }, []);
 
 const AboutSection = ({ language = "english" }) => {
   const translations = {

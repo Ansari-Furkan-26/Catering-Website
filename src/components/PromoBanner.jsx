@@ -20,7 +20,7 @@ const PromoBanner = ({ language = "english" }) => {
   const t = translations[language] || translations.english;
 
   return (
-    <div className="bg-gray-100 flex pb-5 px-4 md:px-20 items-center justify-center">
+    <div className="bg-gray-100 flex py-5 px-4 md:px-20 items-center justify-center">
       <div
         className="relative bg-cover bg-center rounded-3xl w-full h-64 flex items-center justify-center text-gray-200 shadow-lg"
         style={{

@@ -8,6 +8,8 @@ import Testimonial from "../components/Testimonial";
 import Form from "../components/ContactForm";
 import { motion } from "framer-motion";
 import { FaInstagram, FaWhatsapp, FaSnapchat } from "react-icons/fa";
+import ImageGallery from "../components/ImageGallery";
+import FeaturedArtworks from "../components/HeroGallery";
 
 const CateringHeroSection = ({ language }) => {
   const [showPopup, setShowPopup] = useState(false);
@@ -139,6 +141,7 @@ const CateringHeroSection = ({ language }) => {
       <VideoBackground language={language} />
       <Plans language={language} />
       <BlogSection language={language} />
+      <FeaturedArtworks language={language} />
       <Testimonial language={language} />
       <Form language={language} />
       <PromoBanner language={language} />
