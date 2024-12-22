@@ -6,6 +6,9 @@ const translations = {
   english: {
     header: "Select a Package",
     select: "Select Pack",
+    HotType: "Hot Drinks",
+    ColdType: "Cold Drinks",
+    Additional: "Additional",
     hotDrinks: [
       "Arabic coffee or Turkish coffee",
       "Karak Tea",
@@ -62,6 +65,9 @@ const translations = {
   arabic: {
     header: "حدد الحزمة",
     select: "اختر الحزمة",
+    HotType: "المشروبات الساخنة",
+    ColdType: "المشروبات الباردة",
+    Additional: "إضافي",
     hotDrinks: [
       "القهوة العربية او القهوة التركية",
       "شاي كرك",
@@ -202,20 +208,18 @@ const PackShowcase2 = ({ onSelectPackage, language }) => {
                 className="min-w-[350px] md:min-w-[300px] h-full rounded-xl overflow-hidden"
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-              >
+                transition={{ duration: 0.5, delay: index * 0.2 }}>
                 <div className="bg-white rounded-lg shadow-lg p-6 mb-6 max-w-sm h-full flex flex-col">
                   <img
                     src={product.img}
                     alt={product.title}
-                    className="w-full h-40 object-cover mb-2 rounded-lg"
-                  />
+                    className="w-full h-40 object-cover mb-2 rounded-lg"/>
                   <h2 className="text-xl font-semibold">{packageTranslation.title}</h2>
                   <p className="text-gray-600">{packageTranslation.guests}</p>
                   <p className="text-gray-600">{packageTranslation.description}</p>
                   <div className="text-sm my-2">
                     <p className="text-sm">
-                      <strong>Hot Drinks:</strong>
+                      <strong>{t.HotType}:</strong>
                       <ul>
                         {t.hotDrinks.map((drink, index) => (
                           <li key={index}>{drink}</li>
@@ -223,7 +227,7 @@ const PackShowcase2 = ({ onSelectPackage, language }) => {
                       </ul>
                     </p>
                     <p className="text-sm">
-                      <strong>Cold Drinks:</strong>
+                      <strong>{t.ColdType}:</strong>
                       <ul>
                         {t.coldDrinks.map((drink, index) => (
                           <li key={index}>{drink}</li>
@@ -231,7 +235,7 @@ const PackShowcase2 = ({ onSelectPackage, language }) => {
                       </ul>
                     </p>
                     <p className="text-sm mt-4">
-                      <strong>Additional:</strong> <br />
+                      <strong>{t.Additional}:</strong> <br />
                       {packageTranslation.additional}
                     </p>
                   </div>

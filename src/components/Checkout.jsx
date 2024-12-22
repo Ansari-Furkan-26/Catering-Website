@@ -12,6 +12,10 @@ const Checkout = ({ language }) => {
     setSelectedPackagePrice(price);
   };
 
+  const scrollToCart = () => {
+    document.getElementById("cart")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="bg-gray-100">
       {/* Hero Section */}
@@ -53,7 +57,26 @@ const Checkout = ({ language }) => {
       </div>
 
       <PackShowcase2 onSelectPackage={handlePackageSelection} language={language} />
-      <Cart selectedPackage={selectedPackage} selectedPackagePrice={selectedPackagePrice} language={language} />
+
+      {/* Cart Section */}
+      <Cart
+        selectedPackage={selectedPackage}
+        selectedPackagePrice={selectedPackagePrice}
+        language={language}
+      />
+
+      {/* Floating Button */}
+      {selectedPackage && (
+        <button
+          onClick={scrollToCart}
+          className="fixed bottom-4 right-4 bg-gray-900 text-white text-xl p-4 rounded-full h-16 w-16 flex items-center justify-center 
+          shadow-lg hover:bg-gray-800 focus:outline-none 
+          focus:ring-2 focus:ring-slate-100 focus:ring-opacity-50"
+          aria-label="Go to Cart"
+        >
+          🛒
+        </button>
+      )}
     </div>
   );
 };

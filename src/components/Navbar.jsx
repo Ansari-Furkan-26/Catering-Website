@@ -47,8 +47,10 @@ const Navbar = ({ mobileMenuOpen, setMobileMenuOpen, language, toggleLanguage })
         {/* Logo */}
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5 flex items-center">
-            <span className="text-[#FFD700] text-2xl font-bold">ركن</span>
-            <span className="text-white text-2xl font-bold"> الضيافة</span>
+          <h1 className="text-2xl font-bold tracking-wider uppercase">
+            <span className="text-[#FFD700]">ركن</span>{" "}
+            <span className="text-white"> الضيافة</span>
+          </h1>
           </Link>
         </div>
 
