@@ -22,5 +22,15 @@
 
 .animate-marquee {
   display: flex;
-  animation: marquee 15s linear infinite;
+  animation: homarquee 15s linear infinite;
+}
+
+@keyframes heromarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: flex;
+  animation: heromarquee 30s linear infinite;
 }

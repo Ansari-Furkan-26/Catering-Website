@@ -47,7 +47,7 @@ const LuxuryServices = ({ language = "english" }) => {
       {/* Suspense wrapper to load lazy components */}
       <Suspense fallback={<div>Loading...</div>}>
         <OrderForm language={language} />
-        <PromoBanner language={language} />
+        {/* <PromoBanner language={language} /> */}
       </Suspense>
     </div>
   );

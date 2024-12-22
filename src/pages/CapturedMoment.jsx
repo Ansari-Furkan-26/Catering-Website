@@ -25,6 +25,35 @@ import IMG19 from "../assets/Images/19.JPG";
 import IMG20 from "../assets/Images/20.JPG";
 import IMG21 from "../assets/Images/21.JPG";
 import IMG22 from "../assets/Images/22.JPG";
+import IMG23 from "../assets/Images/23.JPG";
+import IMG24 from "../assets/Images/24.JPG";
+import IMG25 from "../assets/Images/25.JPG";
+import IMG26 from "../assets/Images/26.JPG";
+import IMG27 from "../assets/Images/27.JPG";
+import IMG28 from "../assets/Images/28.JPG";
+import IMG29 from "../assets/Images/29.JPG";
+import IMG30 from "../assets/Images/30.JPG";
+import IMG31 from "../assets/Images/31.JPG";
+import IMG32 from "../assets/Images/32.JPG";
+import IMG33 from "../assets/Images/33.JPG";
+import IMG34 from "../assets/Images/34.JPG";
+import IMG35 from "../assets/Images/35.JPG";
+import IMG36 from "../assets/Images/36.JPG";
+import IMG37 from "../assets/Images/37.JPG";
+import IMG38 from "../assets/Images/38.JPG";
+import IMG39 from "../assets/Images/39.JPG";
+import IMG40 from "../assets/Images/40.JPG";
+import IMG41 from "../assets/Images/41.JPG";
+import IMG42 from "../assets/Images/42.JPG";
+import IMG43 from "../assets/Images/43.JPG";
+import IMG44 from "../assets/Images/44.JPG";
+import IMG45 from "../assets/Images/45.JPG";
+import IMG46 from "../assets/Images/46.JPG";
+import IMG47 from "../assets/Images/47.JPG";
+import IMG48 from "../assets/Images/48.JPG";
+import IMG49 from "../assets/Images/49.JPG";
+import IMG50 from "../assets/Images/50.JPG";
+import IMG51 from "../assets/Images/51.JPG";
 
 // Lazy Image Component
 const LazyImage = ({ src, alt, className }) => (
@@ -49,10 +78,11 @@ const Gallery = ({ language = "english" }) => {
   };
 
   // Create an array of imported images
-  const images = [
-    IMG1, IMG2, IMG3, IMG4, IMG5, IMG6, IMG7, IMG8, IMG9, IMG10,
+  const images = [IMG1, IMG2, IMG3, IMG4, IMG5, IMG6, IMG7, IMG8, IMG9, IMG10,
     IMG11, IMG12, IMG13, IMG14, IMG15, IMG16, IMG17, IMG18, IMG19, IMG20,
-    IMG21, IMG22
+    IMG21, IMG22, IMG23, IMG24, IMG25, IMG26, IMG27, IMG28, IMG29, IMG30, 
+    IMG31, IMG32, IMG33, IMG34, IMG35, IMG36, IMG37, IMG38, IMG39, IMG40,
+    IMG41, IMG42, IMG43, IMG44, IMG45, IMG46, IMG47, IMG48, IMG49, IMG50, IMG51
   ];
 
   // Map over the array to create gallery image objects

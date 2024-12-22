@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import AboutImg from "../assets/About.jpg";
 import IMG6 from "../assets/Images/6.JPG";
-import IMG9 from "../assets/Images/9.JPG";
+import IMG4 from "../assets/Images/4.JPG";
 import IMG33 from "../assets/Images/33.JPG";
 
 const cards = [
@@ -18,7 +18,7 @@ const cards = [
     },
   },
   {
-    img: IMG9,
+    img: IMG4,
     title: {
       english: "Luxury Wedding Events", 
       arabic: "فعاليات الزفاف الفاخرة"
@@ -70,7 +70,7 @@ function About({ language }) {
       {/* About Section */}
       <div className="p-6 flex flex-col lg:flex-row justify-between gap-8">
         <motion.h1
-          className="text-xl md:text-3xl font-bold mb-4 max-w-sm"
+          className="text-3xl font-bold mb-4 max-w-sm"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}>

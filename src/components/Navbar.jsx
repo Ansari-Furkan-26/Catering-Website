@@ -120,13 +120,13 @@ const Navbar = ({ mobileMenuOpen, setMobileMenuOpen, language, toggleLanguage })
       {/* Mobile Menu */}
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
         <div className="fixed inset-0 z-50" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm">
+        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm -mr-24">
           <div className="flex items-center justify-between">
             <Link to="/" className="-m-1.5 p-1.5 flex items-center">
               <span className="text-[#FFD700] text-2xl font-bold">ركن</span>
               <span className="text-white text-2xl font-bold"> الضيافة</span>
             </Link>
-            <button type="button" onClick={() => setMobileMenuOpen(false)} className="-m-2.5 p-2.5 text-white">
+            <button type="button" onClick={() => setMobileMenuOpen(false)} className="-m-2.5 p-2.5 text-white right-6 fixed">
               <XMarkIcon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>

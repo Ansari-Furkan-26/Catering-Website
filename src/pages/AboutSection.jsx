@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import About from '../components/About';
-import Gallery from '../components/ImageGallery';
+import Gallery from '../components/AboutGallery';
 
 // useEffect(() => {
 //   document.title = 'My Webrecto'; // Quick solution

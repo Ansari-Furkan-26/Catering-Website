@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import IMG2 from "../assets/Images/2.JPG";
 
 const translations = {
   english: {
@@ -55,7 +56,7 @@ const CheckoutPage = ({ language }) => {
   const t = translations[language] || translations.english;
 
   return (
-    <div className="flex justify-center md:py-6 px-4 items-center min-h-full bg-gray-100" id='Book'>
+    <div className="flex justify-center pb-6 md:py-6 px-4 items-center min-h-full bg-gray-100" id='Book'>
       <div className="max-w-6xl w-full bg-white rounded-lg shadow-xl flex flex-col md:flex-row">
         <div className="w-full md:w-1/2 p-8">
           <h2 className="text-2xl font-semibold mb-6">{t.header}</h2> 
