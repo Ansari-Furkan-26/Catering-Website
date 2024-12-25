@@ -175,9 +175,7 @@ const Cart = ({ selectedPackage, selectedPackagePrice , language }) => {
     ${selectedFoodItems.map((food, index) => `- ${food.name} (${food.price} AED)`).join("\n")}
     
     *Selected Drinks:*
-    ${selectedDrinks.map((drink, index) => `- ${drink.type}: ${drink.name} (${drink.price} AED)`).join("\n")}
-
-    
+    ${selectedDrinks.map((drink, index) => `- ${drink.type}: ${drink.name} (${drink.price} AED)`).join("\n")}   
     
     *Client Information:*
     - Name: ${formData.name || "N/A"}

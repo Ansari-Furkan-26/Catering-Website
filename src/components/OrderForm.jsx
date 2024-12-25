@@ -113,7 +113,7 @@ const OrderForm = ({ language = "english" }) => {
                 ))}
               </select>
             </div>
-            {renderInput(translations[language].phone, 'phone', 'tel')}
+            {renderInput(translations[language].phone, 'phone', 'number')}
             {renderInput(translations[language].guests, 'guests', 'number', { min: 1 })}
             {renderInput(translations[language].eventDate, 'eventDate', 'date')}
 

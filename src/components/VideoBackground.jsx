@@ -50,8 +50,9 @@ const VideoBackground = ({ language }) => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeInOut" }}
         >
+
           <motion.h1
-            className="text-xl md:text-5xl font-bold"
+            className="text-2xl md:text-5xl font-bold bg-gradient-to-b from-gray-100 via-gray-200 to-gray-400 text-transparent bg-clip-text"
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -59,7 +60,7 @@ const VideoBackground = ({ language }) => {
             {t.heading}
           </motion.h1>
           <motion.p
-            className="mt-4 text-xl"
+            className="mt-4 text-md md:text-xl"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}

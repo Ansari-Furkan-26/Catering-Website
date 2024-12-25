@@ -68,7 +68,7 @@ const CateringHeroSection = ({ language }) => {
       <div className="relative bg-black h-screen px-4 sm:px-8">
 
         {/* Background Marquee for Mobile View */}
-        <div className="absolute inset-0 md:hidden overflow-hidden bg-black opacity-80">
+        <div className="absolute inset-0 md:hidden overflow-hidden bg-black opacity-70">
           {images.map((src, index) => (
             <div
               key={index}
@@ -97,7 +97,7 @@ const CateringHeroSection = ({ language }) => {
           
           {/* Animated Heading */}
           <motion.h1
-            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight max-w-4xl"
+            className="text-3xl sm:text-4xl md:text-5xl  font-bold leading-tight max-w-4xl"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
