@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import OrderForm from "../components/OrderForm";
 import PromoBanner from "../components/PromoBanner";
+import { Helmet } from "react-helmet-async";
 
 const LuxuryServices = ({ language = "english" }) => {
   const translations = {
@@ -18,6 +19,14 @@ const LuxuryServices = ({ language = "english" }) => {
 
   return (
     <div>
+      <Helmet>
+        <title>Rukn Al Dyafa - Service</title>
+        <meta name="description" 
+        content="Indulge in exclusive luxury catering services in the UAE. From signature drinks to gourmet treats, we create memorable dining experiences." />
+        <meta name="keywords" content="luxury catering UAE, signature drinks UAE, premium beverage services" />
+        <link rel="canonical" href="http://localhost:5173/" />
+      </Helmet>
+
       {/* Hero Section */}
       <div className="relative bg-black h-[30rem] px-4 sm:px-8">
         {/* Background Image */}

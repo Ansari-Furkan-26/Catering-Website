@@ -8,6 +8,7 @@ import Form from "../components/ContactForm";
 import { motion } from "framer-motion";
 import { FaInstagram, FaWhatsapp, FaSnapchat } from "react-icons/fa";
 import FeaturedArtworks from "../components/HeroGallery";
+import { Helmet } from "react-helmet-async";
 
 import IMG2 from "../assets/Images/2.JPG";
 import IMG51 from "../assets/Images/51.JPG";
@@ -65,6 +66,13 @@ const CateringHeroSection = ({ language }) => {
 
   return (
     <div className="">
+    <Helmet>
+      <title>Rukn Al Dyafa</title>  
+      <meta name="description" 
+      content="Discover premium catering and beverage services in the UAE. We specialize in luxurious drinks and unforgettable experiences for weddings, corporate events, and private gatherings." />
+      <meta name="keywords" content="catering services UAE, luxury beverages UAE, premium catering, event catering UAE" />
+      <link rel="canonical" href="http://localhost:5173/" />
+    </Helmet>
       <div className="relative bg-black h-screen px-4 sm:px-8">
 
         {/* Background Marquee for Mobile View */}

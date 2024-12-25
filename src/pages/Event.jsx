@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 
 const headerImage = 'https://i.pinimg.com/736x/c0/88/59/c0885989e1a17079e0e8ec5d5c5138df.jpg';
 
@@ -41,6 +42,14 @@ const events = [
 function Eventpg({ language }) {
   return (
     <div className="bg-gray-100 min-h-screen" id="ExploreMoment">
+      <Helmet>
+        <title>Rukn Al Dyafa - Events</title>
+        <meta name="description" 
+        content="From weddings to corporate events, we provide bespoke catering and beverage solutions in the UAE. Tailored to perfection for any occasion."/>
+        <meta name="keywords" content="event catering UAE, wedding catering UAE, corporate beverage services" />
+        <link rel="canonical" href="http://localhost:5173/" />
+      </Helmet>
+
       {/* Header */}
       <section
         className="relative bg-cover bg-center h-[500px] flex items-center justify-center"

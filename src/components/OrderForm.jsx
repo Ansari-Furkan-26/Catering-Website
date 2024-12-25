@@ -94,39 +94,67 @@ const OrderForm = ({ language = "english" }) => {
             {translations[language].title}
           </h2>
           <form onSubmit={handleSubmit}>
-            {renderInput(translations[language].name, 'name')}
-            {renderInput(translations[language].email, 'email', 'email')}
-            <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700">{translations[language].city}</label>
-              <select
-                name="city"
-                value={formData.city}
-                onChange={handleChange}
-                required
-                className="mt-1 p-2 w-full border rounded-lg bg-transparent text-gray-700"
-              >
-                <option value="">{translations[language].city}</option>
-                {cities.map((city) => (
-                  <option key={city} value={city}>
-                    {city}
-                  </option>
-                ))}
-              </select>
-            </div>
-            {renderInput(translations[language].phone, 'phone', 'number')}
-            {renderInput(translations[language].guests, 'guests', 'number', { min: 1 })}
-            {renderInput(translations[language].eventDate, 'eventDate', 'date')}
+  {renderInput(translations[language].name, 'name')}
+  {renderInput(translations[language].email, 'email', 'email')}
+  <div className="mb-4">
+    <label className="block text-sm font-medium text-gray-700">{translations[language].city}</label>
+    <select
+      name="city"
+      value={formData.city}
+      onChange={handleChange}
+      required
+      className="mt-1 p-2 w-full border rounded-lg bg-transparent text-gray-700"
+    >
+      <option value="">{translations[language].city}</option>
+      {cities.map((city) => (
+        <option key={city} value={city}>
+          {city}
+        </option>
+      ))}
+    </select>
+  </div>
+  <div className="mb-4">
+    <label className="block text-sm font-medium text-gray-700">{translations[language].phone}</label>
+    <div className="flex items-center">
+      <select
+        name="countryCode"
+        value={formData.countryCode}
+        onChange={handleChange}
+        className="mr-2 p-2 border rounded-lg bg-transparent text-gray-700"
+      >
+        {['+1', '+91', '+44', '+971'].map((code) => (
+          <option key={code} value={code}>
+            {code}
+          </option>
+        ))}
+      </select>
+      <input
+        type="tel"
+        name="phone"
+        value={formData.phone}
+        onChange={handleChange}
+        minLength={10}
+        maxLength={10}
+        placeholder="Phone Number"
+        className="p-2 border border-gray-300 rounded-lg flex-grow"
+        required
+      />
+    </div>
+  </div>
+  {renderInput(translations[language].guests, 'guests', 'number', { min: 10 })}
+  {renderInput(translations[language].eventDate, 'eventDate', 'date')}
 
-            <div className="flex justify-center mb-4">
-              <button
-                type="submit"
-                className="bg-blue-500 text-white p-2 rounded-md w-full hover:bg-green-600"
-                disabled={false} // Enable the button
-              >
-                {translations[language].submitButton}
-              </button>
-            </div>
-          </form>
+  <div className="flex justify-center mb-4">
+    <button
+      type="submit"
+      className="bg-blue-500 text-white p-2 rounded-md w-full hover:bg-green-600"
+      disabled={false} // Enable the button
+    >
+      {translations[language].submitButton}
+    </button>
+  </div>
+</form>
+
         </div>
 
         {/* Right: Product Image and Info */}

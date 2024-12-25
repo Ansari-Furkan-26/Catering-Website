@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import About from '../components/About';
 import Gallery from '../components/AboutGallery';
+import { Helmet } from "react-helmet-async";
 
 // useEffect(() => {
 //   document.title = 'My Webrecto'; // Quick solution
@@ -20,7 +21,14 @@ const AboutSection = ({ language = "english" }) => {
 
   return (
     <div className="bg-gray-100 min-h-screen" id="ExploreMoment">
-      {/* Header */}
+      <Helmet>
+        <title>Rukn Al Dyafa - About Us</title> 
+        <meta name="description" 
+        content="Learn more about our commitment to delivering premium catering and beverage services. We bring elegance and taste to your events in the UAE." />
+        <meta name="keywords" content="about catering UAE, luxury catering UAE, beverage services UAE" />
+        <link rel="canonical" href="http://localhost:5173/" />
+      </Helmet>
+          
       {/* Background image and text about capturing moments */}
       <section
         className="relative bg-cover bg-center h-[500px] flex items-center justify-center"

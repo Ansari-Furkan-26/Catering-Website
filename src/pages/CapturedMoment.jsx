@@ -1,6 +1,7 @@
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { Helmet } from "react-helmet-async";
 
 // Correctly import each image from its respective file
 import IMG1 from "../assets/Images/1.JPG";
@@ -95,6 +96,14 @@ const Gallery = ({ language = "english" }) => {
 
   return (
     <div className="bg-gray-100 min-h-screen">
+      <Helmet>
+        <title>Rukn Al Dyafa - Gallery</title>
+        <meta name="description" 
+        content="Celebrate life’s precious moments with our elegant catering and beverage services in the UAE. Perfect for weddings, parties, and special events." />
+        <meta name="keywords" content="capture moments UAE, special events catering, luxury party services UAE" />      
+        <link rel="canonical" href="http://localhost:5173/" />
+      </Helmet>
+
       {/* Header */}
       <section
         className="relative bg-cover bg-center h-[500px] flex items-center justify-center"

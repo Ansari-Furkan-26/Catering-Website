@@ -1,0 +1,18 @@
+# Block all crawlers from accessing the admin section
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+
+# Allow specific sections for indexing
+User-agent: *
+Allow: /about-section/
+Allow: /luxury-services/
+Allow: /capture-moment/
+Allow: /events/
+Allow: /home/
+
+# Disallow search crawlers from indexing query parameters
+Disallow: /*?*
+
+# Provide the sitemap link to help crawlers navigate
+Sitemap: https://steady-kitsune-44a358.netlify.app/sitemap.xml
