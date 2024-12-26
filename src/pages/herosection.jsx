@@ -14,7 +14,8 @@ import IMG2 from "../assets/Images/2.JPG";
 import IMG51 from "../assets/Images/51.JPG";
 import IMG48 from "../assets/Images/49.JPG";
 import IMG10 from "../assets/Images/10.JPG";
-import IMG50 from "../assets/Images/50.JPG";
+import IMG50 from "../assets/About.jpg";
+import IMG01 from "../assets/home.jpg";
 import IMG43 from "../assets/Images/43.JPG";
 
 const CateringHeroSection = ({ language }) => {
@@ -27,10 +28,11 @@ const CateringHeroSection = ({ language }) => {
     // "https://i.pinimg.com/736x/5d/c5/b4/5dc5b454033a9ffc56cc4297a25d2309.jpg",
     // "https://i.pinimg.com/736x/2a/75/40/2a75408e842265f495bebb58cec55be0.jpg",
     IMG2,
+    IMG50,
     IMG51,
     IMG48,
     IMG10,
-    IMG50,
+    IMG01,
     IMG43,
     // Add more images as needed
   ];
@@ -70,9 +72,26 @@ const CateringHeroSection = ({ language }) => {
       <title>Rukn Al Dyafa</title>  
       <meta name="description" 
       content="Discover premium catering and beverage services in the UAE. We specialize in luxurious drinks and unforgettable experiences for weddings, corporate events, and private gatherings." />
-      <meta name="keywords" content="catering services UAE, luxury beverages UAE, premium catering, event catering UAE" />
-      <link rel="canonical" href="http://localhost:5173/" />
+      <meta name="keywords" content="خدمات تقديم الطعام الفاخرة , تقديم المشروبات في المناسبات , شركات تقديم الطعام في الإمارات , حجز خدمات تقديم المشروبات, أفضل خدمات تقديم الطعام في الإمارات, مشروبات لحفلات الزفاف, inquire about event drink services UAE, contact beverage caterers for weddings Dubai, beverage catering Abu Dhabi for parties, event drinks setup in Sharjah, wedding beverage services in Al Ain, Dubai beverage service company for events, catering services UAE book , event drinks setup UAE online booking, beverage service for hire Dubai, beverage services near me, luxury beverages UAE, premium catering, event catering UAE" />
+      <link rel="canonical" href="https://www.ruknaldyafa.ae/" />
+      <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/46/65/46/466546a84dbb58e61e1eafc5ee4864b6.png"/>
+      <meta name="author" content="Rukn Al Dyafa Team" />
+
+    {/* Social Media Meta Tags (Open Graph) */}
+     <meta property="og:title" content="Rukn Al Dyafa - Premium Catering Services" />
+     <meta property="og:description" content="Discover luxury catering and beverage services for weddings, corporate events, and private gatherings in the UAE." />
+     <meta property="og:image" content="https://i.pinimg.com/736x/a5/dd/21/a5dd2105486983221aac5199b30a29ac.jpg" />
+     <meta property="og:url" content="https://www.ruknaldyafa.ae/" />
+     <meta property="og:type" content="website" />
+
+  {/* Twitter Card Meta Tags */}
+     <meta name="twitter:card" content="summary_large_image" />
+     {/* <meta name="twitter:site" content="@RuknAlDyafa" /> */}
+     <meta name="twitter:title" content="Rukn Al Dyafa - Premium Catering Services" />
+     <meta name="twitter:description" content="Experience luxurious catering services in the UAE. From bespoke drinks to customized experiences for any event." />
+     <meta name="twitter:image" content="https://i.pinimg.com/736x/a5/dd/21/a5dd2105486983221aac5199b30a29ac.jpg" />
     </Helmet>
+
       <div className="relative bg-black h-screen px-4 sm:px-8">
 
         {/* Background Marquee for Mobile View */}
@@ -144,13 +163,13 @@ const CateringHeroSection = ({ language }) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <a href="https://www.instagram.com/rukn_aldyafa/" target="_blank" className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-full hover:bg-gray-600 transition">
+            <a href="https://www.instagram.com/rukn_aldyafa/" rel="noreferrer" target="_blank" className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-full hover:bg-gray-600 transition">
               <FaInstagram />
             </a>
-            <a href="https://wa.me/+971503665518" target="_blank" className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-full hover:bg-gray-600 transition">
+            <a href="https://wa.me/+971503665518" target="_blank" rel="noreferrer" className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-full hover:bg-gray-600 transition">
               <FaWhatsapp />
             </a>
-            <a href="https://www.snapchat.com/add/ruknaldyafa?sender_web_id=f7b1dbb5-c3c0-48c6-a15b-058b0e4429dc&device_type=desktop&is_copy_url=true" target="_blank" className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-full hover:bg-gray-600 transition">
+            <a href="https://www.snapchat.com/add/ruknaldyafa?sender_web_id=f7b1dbb5-c3c0-48c6-a15b-058b0e4429dc&device_type=desktop&is_copy_url=true" target="_blank" rel="noreferrer" className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-full hover:bg-gray-600 transition">
               <FaSnapchat />
             </a>
           </motion.div>

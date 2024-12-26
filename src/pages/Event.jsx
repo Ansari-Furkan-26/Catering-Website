@@ -46,9 +46,27 @@ function Eventpg({ language }) {
         <title>Rukn Al Dyafa - Events</title>
         <meta name="description" 
         content="From weddings to corporate events, we provide bespoke catering and beverage solutions in the UAE. Tailored to perfection for any occasion."/>
-        <meta name="keywords" content="event catering UAE, wedding catering UAE, corporate beverage services" />
-        <link rel="canonical" href="http://localhost:5173/" />
+        <meta name="keywords" content="birthday party beverage services UAE, wedding beverage catering Dubai, corporate event drink services UAE, event catering UAE, luxury event drinks catering Dubai, engagement party beverage setup UAE, wedding catering UAE, corporate beverage services" />
+        <link rel="canonical" href="https://www.ruknaldyafa.ae/events" />
+        <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/46/65/46/466546a84dbb58e61e1eafc5ee4864b6.png"/>
+        <meta name="author" content="Rukn Al Dyafa Team" />
+
+         {/* Social Media Meta Tags (Open Graph and Twitter Cards) */}
+         <meta property="og:title" content="Rukn Al Dyafa - Events" />
+        <meta property="og:description" content="Discover exquisite catering services for every occasion in the UAE. From luxury weddings to corporate events and gala dinners, we provide custom menus and premium beverages designed to elevate your events and delight your guests." />
+        <meta property="og:image" content="https://i.pinimg.com/736x/c0/88/59/c0885989e1a17079e0e8ec5d5c5138df.jpg" />
+        <meta property="og:url" content="https://www.ruknaldyafa.ae/events" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Rukn Al Dyafa - Events" />
+        <meta name="twitter:description" content="Discover exquisite catering services for every occasion in the UAE. From luxury weddings to corporate events and gala dinners, we provide custom menus and premium beverages designed to elevate your events and delight your guests." />
+        <meta name="twitter:image" content="https://i.pinimg.com/736x/c0/88/59/c0885989e1a17079e0e8ec5d5c5138df.jpg" />
+        <meta name="twitter:url" content="http://localhost:5173/" />
+        
       </Helmet>
+
 
       {/* Header */}
       <section

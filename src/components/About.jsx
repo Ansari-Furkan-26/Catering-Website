@@ -69,13 +69,13 @@ function About({ language }) {
     <div className="h-full px-4 py-8 sm:px-8 bg-gray-100">
       {/* About Section */}
       <div className="p-6 flex flex-col lg:flex-row justify-between gap-8">
-        <motion.h1
+        <motion.h2
           className="text-3xl font-bold mb-4 max-w-sm"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}>
           {t.header}
-        </motion.h1>
+        </motion.h2>
         <motion.div
           className="block max-w-2xl"
           initial={{ opacity: 0, x: 50 }}

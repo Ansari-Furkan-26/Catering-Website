@@ -96,13 +96,32 @@ const Gallery = ({ language = "english" }) => {
 
   return (
     <div className="bg-gray-100 min-h-screen">
-      <Helmet>
+     <Helmet>
         <title>Rukn Al Dyafa - Gallery</title>
         <meta name="description" 
         content="Celebrate life’s precious moments with our elegant catering and beverage services in the UAE. Perfect for weddings, parties, and special events." />
-        <meta name="keywords" content="capture moments UAE, special events catering, luxury party services UAE" />      
+        <meta name="keywords" content="cluxury catering UAE, premium beverage services for weddings UAE, premium catering services, wedding catering UAE, special events catering, bespoke catering UAE, party catering UAE, corporate event catering, birthday party catering services" /> 
+        <meta name="author" content="Rukn Al Dyafa Team" />
+        <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/46/65/46/466546a84dbb58e61e1eafc5ee4864b6.png"/>
+        <link rel="canonical" href="https://www.ruknaldyafa.ae/capture-moments" />
+
+          {/* Open Graph Tags for Social Media Sharing */}
+        <meta property="og:title" content="Luxury Catering UAE | Rukn Al Dyafa" />
+        <meta property="og:description" content="Explore our gallery showcasing premium catering services, perfect for weddings and luxury events. Capture unforgettable moments with world-class hospitality." />
+        <meta property="og:image" content="https://i.pinimg.com/736x/c0/dc/49/c0dc498d4b9c855c8e299498ea2b2ea4.jpg" />
+        <meta property="og:url" content="https://www.ruknaldyafa.ae/capture-moments" />
+        <meta property="og:type" content="website" />
+
+  {/* Twitter Card Tags */}
+        <meta name="twitter:title" content="Rukn Al Dyafa - Premium Catering" />
+        <meta name="twitter:description" content="Experience bespoke catering services in UAE for all your special events and weddings. View our gallery of stunning culinary displays." />
+        <meta name="twitter:image" content="https://i.pinimg.com/736x/c0/dc/49/c0dc498d4b9c855c8e299498ea2b2ea4.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+
+
         <link rel="canonical" href="http://localhost:5173/" />
       </Helmet>
+
 
       {/* Header */}
       <section

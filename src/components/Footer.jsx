@@ -56,7 +56,7 @@ function Footer({ language = "english" }) {
           <a href="/events" className="text-gray-400 hover:text-gray-100">
             {t.events}
           </a>
-          <a href="https://wa.me/+971503665518" target="_blank" className="text-gray-400 hover:text-gray-100">
+          <a href="https://wa.me/+971503665518" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-gray-100">
             {t.contactUs}
           </a>
         </div>

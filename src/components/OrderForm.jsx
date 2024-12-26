@@ -116,7 +116,7 @@ const OrderForm = ({ language = "english" }) => {
   <div className="mb-4">
     <label className="block text-sm font-medium text-gray-700">{translations[language].phone}</label>
     <div className="flex items-center">
-      <select
+      {/* <select
         name="countryCode"
         value={formData.countryCode}
         onChange={handleChange}
@@ -127,7 +127,7 @@ const OrderForm = ({ language = "english" }) => {
             {code}
           </option>
         ))}
-      </select>
+      </select> */}
       <input
         type="tel"
         name="phone"

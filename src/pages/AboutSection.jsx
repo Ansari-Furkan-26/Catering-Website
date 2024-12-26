@@ -25,8 +25,25 @@ const AboutSection = ({ language = "english" }) => {
         <title>Rukn Al Dyafa - About Us</title> 
         <meta name="description" 
         content="Learn more about our commitment to delivering premium catering and beverage services. We bring elegance and taste to your events in the UAE." />
-        <meta name="keywords" content="about catering UAE, luxury catering UAE, beverage services UAE" />
+        <meta name="keywords" content="top-rated beverage catering UAE, best drink catering services in Dubai, luxury catering UAE, premium catering services UAE, beverage services UAE, wedding catering UAE, corporate event catering UAE, catering services in Dubai, bespoke catering services, elegant catering solutions, birthday party catering services UAE, tailored catering UAE" />
+        <meta name="author" content="Rukn Al Dyafa Team" />
+        <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/46/65/46/466546a84dbb58e61e1eafc5ee4864b6.png"/>
+        <link rel="canonical" href="https://www.ruknaldyafa.ae/about-section" />
+
+  {/* Open Graph Tags for Social Media Sharing */}
+       <meta property="og:title" content="Rukn Al Dyafa - About Us" />
+       <meta property="og:description" content="Explore how our premium catering and beverage services bring elegance and unforgettable moments to your special occasions in the UAE." />
+       <meta property="og:image" content="https://example.com/your-image.jpg" /> {/* Replace with your image URL */}
+       <meta property="og:url" content="https://www.ruknaldyafa.ae/about-section" />
+       <meta property="og:type" content="website" />
+
+  {/* Twitter Card Tags */}
+       <meta name="twitter:title" content="Rukn Al Dyafa - About Us" />
+       <meta name="twitter:description" content="Discover our luxurious catering and beverage services in the UAE. Let us create unforgettable events tailored to your needs." />
+       <meta name="twitter:image" content="https://example.com/your-image.jpg" /> {/* Replace with your image URL */}
+       <meta name="twitter:card" content="summary_large_image" />
         <link rel="canonical" href="http://localhost:5173/" />
+
       </Helmet>
           
       {/* Background image and text about capturing moments */}

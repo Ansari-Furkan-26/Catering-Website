@@ -61,7 +61,7 @@ const translations = {
     title: "Package Title",
     price: "Package Price",
     drinks: "Drinks",
-    fooditem: "Food items",
+    fooditem: "Traditional Food items",
     selectedfood: "Selected Food Item",
     Charges: "Delivery Charges",
     total: "Total",
@@ -85,7 +85,7 @@ const translations = {
     title: "عنوان الحزمة",
     price: "سعر الباقة",
     drinks: "مشروبات",
-    fooditem: "",
+    fooditem: "الأطعمة التقليدية",
     selectedfood: "صنف طعام مختار",
     Charges: "رسوم التوصيل",
     total: "المجموع",
@@ -181,7 +181,7 @@ const Cart = ({ selectedPackage, selectedPackagePrice , language }) => {
     - Name: ${formData.name || "N/A"}
     - Email: ${formData.email || "N/A"}
     - City: ${formData.city || "N/A"}
-    - Phone: ${formData.phone || "N/A"}
+    - Phone: ${formData.countryCode ? `${formData.countryCode} ${formData.phone}` : formData.phone || "N/A"}
     - Guests: ${formData.guests || "N/A"}
     - Event Date: ${formData.eventDate || "N/A"}
 
@@ -205,11 +205,11 @@ const Cart = ({ selectedPackage, selectedPackagePrice , language }) => {
     
       <div className="hidden md:block h-full w-full p-8">
       <img 
-        src="https://i.pinimg.com/736x/74/fa/f7/74faf76a2616f4f776cf157c18a09d77.jpg" 
+        src="https://i.pinimg.com/736x/36/db/a0/36dba0a1d51aab032bb4855f8075b8c3.jpg" 
         alt="Package Image" 
         className="object-cover max-h-full w-full rounded-xl"/>
       </div>
-      <div className="max-w-6xl w-full bg-gray-50 rounded-lg p-8">
+      <div className="max-w-6xl w-full bg-gray-50 rounded-lg py-8 px-3 md:p-8">
         <h1 className="text-2xl font-bold text-center">{t.header}</h1>
 
         {/* Drink Selection */}
@@ -252,7 +252,7 @@ const Cart = ({ selectedPackage, selectedPackagePrice , language }) => {
 
        {/* Food Section */}
        <div className="mb-6">
-          <h2 className="text-lg font-semibold mb-4">{t.fooditem}</h2>
+          <h2 className="text-md font-semibold mb-2">{t.fooditem}</h2>
           <select
             onChange={(e) => handleFoodSelection(e.target.value)}
             className="border border-gray-300 rounded-md px-3 py-2 w-full"
@@ -267,70 +267,69 @@ const Cart = ({ selectedPackage, selectedPackagePrice , language }) => {
         </div>
         
       
-        {/* Selected Package Details */}
-        {selectedPackage && selectedPackagePrice && (
-          <div className="border rounded-lg p-4 my-6 bg-gray-50">
-            <h2 className="text-xl font-semibold mb-4">{t.select}</h2>
-            <div className="flex justify-between border-b pb-2">
-              <span className="font-medium">{t.title}:</span>
-              <span>{selectedPackage}</span>
-            </div>
-            <div className="flex justify-between border-b pb-2">
-              <span className="font-medium">{t.price}:</span>
-              <span>{selectedPackagePrice} AED</span>
-            </div>
-            {selectedDrinks.length > 0 && (
-          <div className="mb-4">
-            <h3 className="font-semibold mb-2">{t.drinks}:</h3>
-            <div className="flex justify-between items-center m-6">          
-        </div>  
-          
-              
-            {/* Selected Drinks Details */}
-            {selectedDrinks.map((drink, index) => (
-              <div key={index} className="flex justify-between items-center border-b pb-2">
-                <div>
-                  <span>
-                    {drink.type}: {drink.name}
-                  </span>
-                </div>
-                <div className="flex items-center">
-                  <span>{drink.price} AED</span>
-                  <button
-                    className="ml-4 text-red-500 font-bold hover:text-red-700"
-                    onClick={() => removeDrink(index)}>
-                    <MdDelete />
-                  </button>
-                </div>                
+                {/* Selected Package Details */}
+        <div className="border rounded-lg p-4 my-6 bg-gray-50">
+          <h2 className="text-xl font-semibold mb-4">{t.select}</h2>
+
+          {/* Display Package Details Only if Available */}
+          {selectedPackage && selectedPackagePrice && (
+            <>
+              <div className="flex justify-between border-b pb-2">
+                <span className="font-medium">{t.title}:</span>
+                <span>{selectedPackage}</span>
               </div>
-            ))}
-          </div>
-        )}
-        {/* Selected Food Items */}
-        {selectedFoodItems.length > 0 && (
-          <div className="mb-4">
-            <h3 className="font-semibold mb-2">{t.selectedfood}:</h3>
-            {selectedFoodItems.map((food, index) => (
-              <div
-                key={index}
-                className="flex justify-between items-center border-b pb-2"
-              >
-                <div>{food.name}</div>
-                <div className="flex items-center">
-                  <span>{food.price} AED</span>
-                  <button
-                    className="ml-4 text-red-500 font-bold hover:text-red-700"
-                    onClick={() => removeFoodItem(index)}
-                  >
-                    <MdDelete />
-                  </button>
-                </div>
+              <div className="flex justify-between border-b pb-2">
+                <span className="font-medium">{t.price}:</span>
+                <span>{selectedPackagePrice} AED</span>
               </div>
-            ))}
-          </div>
-        )}           
-          </div>
-        )}
+            </>
+          )}
+
+          {/* Display Selected Drinks, if Any */}
+          {selectedDrinks.length > 0 && (
+            <div className="mb-4">
+              <h3 className="font-semibold mb-2">{t.drinks}:</h3>
+              {selectedDrinks.map((drink, index) => (
+                <div key={index} className="flex justify-between items-center border-b pb-2">
+                  <div>
+                    <span>{drink.type}: {drink.name}</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span>{drink.price} AED</span>
+                    <button
+                      className="ml-4 text-red-500 font-bold hover:text-red-700"
+                      onClick={() => removeDrink(index)}
+                    >
+                      <MdDelete />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Display Selected Food Items, if Any */}
+          {selectedFoodItems.length > 0 && (
+            <div className="mb-4">
+              <h3 className="font-semibold mb-2">{t.selectedfood}:</h3>
+              {selectedFoodItems.map((food, index) => (
+                <div key={index} className="flex justify-between items-center border-b pb-2">
+                  <div>{food.name}</div>
+                  <div className="flex items-center">
+                    <span>{food.price} AED</span>
+                    <button
+                      className="ml-4 text-red-500 font-bold hover:text-red-700"
+                      onClick={() => removeFoodItem(index)}
+                    >
+                      <MdDelete />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
         
         {/* Delivery Charges */}
         <div className="flex justify-between mt-4 text-lg">
@@ -343,30 +342,29 @@ const Cart = ({ selectedPackage, selectedPackagePrice , language }) => {
         <div className="flex justify-between mt-4 text-lg font-bold">
           <span>{t.total}:</span>
           <span>{calculateTotal()} AED</span>
-        </div>
-        
+        </div>        
         
         {/* Client Entries Section */}
         <div className="border rounded-lg p-4 my-6 bg-gray-50">
-        <h2 className="text-xl font-semibold mb-4">{t.clientEntries}</h2>
-        <div className="space-y-2">
-          {[ 
-            { label: t.name, value: formData.name },
-            { label: t.email, value: formData.email },
-            { label: t.city, value: formData.city },
-            { label: t.phone, value: formData.phone },
-            { label: t.guests, value: formData.guests },
-            { label: t.eventDate, value: formData.eventDate },
-          ].map((item, index) => (
-            <div key={index} className="flex justify-between border-b pb-2">
-              <span className="font-medium">{item.label}:</span>
-              <span className="truncate max-w-xs md:max-w-full">
-                {item.label === t.email && item.value ? item.value.split('@')[0] + '...' : item.value || "N/A"}
-              </span>
-            </div>
-          ))}
+          <h2 className="text-xl font-semibold mb-4">{t.clientEntries}</h2>
+          <div className="space-y-2">
+            {[
+              { label: t.name, value: formData.name },
+              { label: t.email, value: formData.email }, // No truncation
+              { label: t.city, value: formData.city },
+              { label: t.phone, value: formData.countryCode ? `${formData.countryCode} ${formData.phone}` : formData.phone },
+              { label: t.guests, value: formData.guests },
+              { label: t.eventDate, value: formData.eventDate },
+            ].map((item, index) => (
+              <div key={index} className="flex justify-between border-b pb-2">
+                <span className="font-medium">{item.label}:</span>
+                <span className="truncate max-w-xs md:max-w-full">
+                  {item.value || "N/A"}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
 
         {/* <div className="text-left my-5 rounded-lg">
         <p><strong>Special Offer: </strong><br /> Order Package 3 or higher and get a complimentary Beverage or Perfume with your order.</p>

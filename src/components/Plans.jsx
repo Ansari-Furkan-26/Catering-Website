@@ -78,7 +78,7 @@ const ProductShowcase = ({ language = "english" }) => {
                 </div>
                 {/* Content */}
                 <div className="inset-x-0 bottom-0 p-4 bg-white bg-opacity-90 group-hover:bg-opacity-100 transition-all duration-500">
-                  <h2 className="text-lg font-semibold mb-1">{product.title[language]}</h2>
+                  <h3 className="text-lg font-semibold mb-1">{product.title[language]}</h3>
                   <p className="text-gray-600 text-sm mb-2">{product.description[language]}</p>
                   <p className="text-green-600 font-bold text-lg">{product.price[language]}</p>
                 </div>
