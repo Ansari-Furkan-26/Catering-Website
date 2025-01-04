@@ -97,7 +97,7 @@ const Gallery = ({ language = "english" }) => {
   return (
     <div className="bg-gray-100 min-h-screen">
      <Helmet>
-        <title>Rukn Al Dyafa - Gallery</title>
+        <title>Rukn Al Dyafa - Luxury Event Planning & Management Services for guests</title>
         <meta name="description" 
         content="Celebrate life’s precious moments with our elegant catering and beverage services in the UAE. Perfect for weddings, parties, and special events." />
         <meta name="keywords" content="cluxury catering UAE, premium beverage services for weddings UAE, premium catering services, wedding catering UAE, special events catering, bespoke catering UAE, party catering UAE, corporate event catering, birthday party catering services" /> 

@@ -67,7 +67,7 @@ const VideoBackground = ({ language }) => {
           >
             {t.paragraph}
           </motion.p>
-          <a href="capture-moments">
+          <a href="hospitality-services-memories">
             <motion.button
               className="mt-6 bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded shadow-lg transition-all"
               whileHover={{ scale: 1.1 }}

@@ -69,7 +69,7 @@ const BlogSection = ({ language }) => {
         <div className="text-center mb-12" dir={language === 'arabic' ? 'rtl' : 'ltr'}>
           <h2 className="text-4xl font-bold mb-4">{t.title}</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">{t.description}</p>
-          <a href="events">
+          <a href="event-planning-services">
             <button className="mt-6 px-6 py-2 bg-black text-white rounded-md hover:bg-gray-800">
               {t.buttonText}
             </button>
@@ -79,7 +79,7 @@ const BlogSection = ({ language }) => {
         {/* Blog grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogs.map((blog, index) => (
-            <a href="/events" key={index}>
+            <a href="event-planning-services" key={index}>
               <div className="relative overflow-hidden rounded-lg shadow-lg group">
                 <img
                   src={blog.image}

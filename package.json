@@ -8,7 +8,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postbuild": "react-snap"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.1",
@@ -22,8 +23,12 @@
     "react-ga4": "^2.1.0",
     "react-helmet-async": "^2.0.5",
     "react-icons": "^4.12.0",
-    "react-lazy-load-image-component": "^1.6.2"
+    "react-lazy-load-image-component": "^1.6.2",
+    "react-snap": "^1.23.0"
   },
+  "reactSnap": {
+  "source": "build"
+},
   "devDependencies": {
     "@eslint/js": "^9.15.0",
     "@types/react": "^18.3.12",

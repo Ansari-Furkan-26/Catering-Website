@@ -4,10 +4,13 @@ import './index.css'
 import App from './App.jsx'
 import { HelmetProvider } from 'react-helmet-async'
 
-createRoot(document.getElementById('root')).render(
+const rootElement = document.getElementById('root');
+const root = createRoot(rootElement); // Use createRoot instead of hydrate/render
+
+root.render(
   <StrictMode>
     <HelmetProvider>
-    <App />
+      <App />
     </HelmetProvider>
-  </StrictMode>,
-)
+  </StrictMode>
+);

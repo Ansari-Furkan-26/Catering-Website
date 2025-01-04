@@ -44,19 +44,19 @@ function Footer({ language = "english" }) {
           <a href="/" className="text-gray-400 hover:text-gray-100">
             {t.home}
           </a>
-          <a href="/luxury-services" className="text-gray-400 hover:text-gray-100">
+          <a href="/luxury-hospitality-services" className="text-gray-400 hover:text-gray-100">
             {t.services}
           </a>
-          <a href="/capture-moments" className="text-gray-400 hover:text-gray-100">
+          <a href="/hospitality-services-memories" className="text-gray-400 hover:text-gray-100">
             {t.gallery}
           </a>
-          <a href="/about-section" className="text-gray-400 hover:text-gray-100">
+          <a href="/about-rukn-al-dyafa" className="text-gray-400 hover:text-gray-100">
             {t.aboutUs}
           </a>
-          <a href="/events" className="text-gray-400 hover:text-gray-100">
+          <a href="/event-planning-services" className="text-gray-400 hover:text-gray-100">
             {t.events}
           </a>
-          <a href="https://wa.me/+971503665518" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-gray-100">
+          <a href="https://wa.me/+917045992776" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-gray-100">
             {t.contactUs}
           </a>
         </div>
@@ -83,7 +83,7 @@ function Footer({ language = "english" }) {
             <FaInstagram className="text-white text-xl" />
           </a>
           <a
-            href="https://wa.me/+971503665518"
+            href="https://wa.me/+917045992776"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-gray-800 hover:bg-gray-700 rounded-full h-10 w-10 flex items-center justify-center"

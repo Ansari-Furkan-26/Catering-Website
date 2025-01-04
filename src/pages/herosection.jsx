@@ -17,6 +17,7 @@ import IMG10 from "../assets/Images/10.JPG";
 import IMG50 from "../assets/About.jpg";
 import IMG01 from "../assets/home.jpg";
 import IMG43 from "../assets/Images/43.JPG";
+import FAQs from "../components/FAQs";
 
 const CateringHeroSection = ({ language }) => {
   const [showPopup, setShowPopup] = useState(false);
@@ -69,11 +70,11 @@ const CateringHeroSection = ({ language }) => {
   return (
     <div className="">
     <Helmet>
-      <title>Rukn Al Dyafa</title>  
+      <title>Rukn Al Dyafa | Hospitality service</title>  
       <meta name="description" 
-      content="Discover premium catering and beverage services in the UAE. We specialize in luxurious drinks and unforgettable experiences for weddings, corporate events, and private gatherings." />
+      content="Discover premium catering, hospitality and beverage services in the UAE. We specialize in luxurious drinks and unforgettable experiences for weddings, corporate events, and private gatherings guests." />
       <meta name="keywords" content="خدمات تقديم الطعام الفاخرة , تقديم المشروبات في المناسبات , شركات تقديم الطعام في الإمارات , حجز خدمات تقديم المشروبات, أفضل خدمات تقديم الطعام في الإمارات, مشروبات لحفلات الزفاف, inquire about event drink services UAE, contact beverage caterers for weddings Dubai, beverage catering Abu Dhabi for parties, event drinks setup in Sharjah, wedding beverage services in Al Ain, Dubai beverage service company for events, catering services UAE book , event drinks setup UAE online booking, beverage service for hire Dubai, beverage services near me, luxury beverages UAE, premium catering, event catering UAE" />
-      <link rel="canonical" href="https://www.ruknaldyafa.ae/" />
+      <link data-rh="true" href="https://www.ruknaldyafa.ae/" rel="canonical"/>
       <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/46/65/46/466546a84dbb58e61e1eafc5ee4864b6.png"/>
       <meta name="author" content="Rukn Al Dyafa Team" />
 
@@ -99,13 +100,10 @@ const CateringHeroSection = ({ language }) => {
           {images.map((src, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-opacity duration-1000 ${index === currentImage ? "opacity-100 " : "opacity-0 "}`}
-            >
-              <img
-                src={src}
-                alt={`Marquee ${index}`}
-                className="w-full h-full object-cover"
-              />
+              className={`absolute inset-0 transition-opacity duration-1000 ${index === currentImage ? "opacity-100 " : "opacity-0 "}`}>
+              <img src={src}
+                alt="Luxury hospitality services in UAE"
+                className="w-full h-full object-cover"/>
             </div>
           ))}
         </div>
@@ -125,7 +123,7 @@ const CateringHeroSection = ({ language }) => {
           {/* Animated Heading */}
           <motion.h1
             className="text-3xl sm:text-4xl md:text-5xl  font-bold leading-tight max-w-4xl"
-            initial={{ opacity: 0, y: -50 }}
+            initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
@@ -135,15 +133,15 @@ const CateringHeroSection = ({ language }) => {
           {/* Animated Paragraph */}
           <motion.p
             className="mt-4 text-sm sm:text-lg md:text-xl italic max-w-2xl"
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
             {t.paragraph}
           </motion.p>
 
           {/* Animated Button */}
-          <a href="luxury-services">
+          <a href="luxury-hospitality-services">
             <motion.button
               className="mt-6 bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-6 rounded shadow-lg transition-all"
               whileHover={{ scale: 1.1 }}
@@ -161,12 +159,13 @@ const CateringHeroSection = ({ language }) => {
             className="flex gap-4 mb-4 md:mb-0"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+            transition={{ duration: 0.8 }}>
+            <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="" data-size="">
             <a href="https://www.instagram.com/rukn_aldyafa/" rel="noreferrer" target="_blank" className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-full hover:bg-gray-600 transition">
               <FaInstagram />
             </a>
-            <a href="https://wa.me/+971503665518" target="_blank" rel="noreferrer" className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-full hover:bg-gray-600 transition">
+            </div>
+            <a href="https://wa.me/+917045992776" target="_blank" rel="noreferrer" className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-full hover:bg-gray-600 transition">
               <FaWhatsapp />
             </a>
             <a href="https://www.snapchat.com/add/ruknaldyafa?sender_web_id=f7b1dbb5-c3c0-48c6-a15b-058b0e4429dc&device_type=desktop&is_copy_url=true" target="_blank" rel="noreferrer" className="w-10 h-10 flex justify-center items-center bg-gray-800 rounded-full hover:bg-gray-600 transition">
@@ -187,13 +186,13 @@ const CateringHeroSection = ({ language }) => {
             <div className="flex items-start justify-start gap-4 mt-3">
               <div className="flex relative gap-2">
                 <img
-                  src="https://www.weddingsinhouston.com/uploads/vendors/any-occasion-party-rental/Screen-Shot-2016-09-22-at-2-28-04-PM.png"
-                  alt="Property 1"
+                  src="https://i.pinimg.com/736x/9b/ab/8c/9bab8cbbd116aeef9f73df374ed5ae4a.jpg"
+                  alt="Luxury hospitality services in UAE"
                   className="w-10 h-10 rounded-full object-cover border border-white"
                 />
                 <img
-                  src="https://tse2.mm.bing.net/th?id=OIP.xdFOfyZe0eNCUPlsMZ4BVgHaEj&pid=Api&P=0&h=180"
-                  alt="Property 2"
+                  src="https://i.pinimg.com/736x/c3/18/cf/c318cff66485cf5034448bdf3e48f253.jpg"
+                  alt="Luxury hospitality services in UAE"
                   className="w-10 h-10 rounded-full object-cover border border-white"
                   style={{ marginLeft: "-15px" }}
                 />
@@ -212,7 +211,8 @@ const CateringHeroSection = ({ language }) => {
       <BlogSection language={language} />
       <FeaturedArtworks language={language} />
       {/* <Testimonial language={language} /> */}
-      <Form language={language} />
+      <Form language={language} />      
+      <FAQs language={language} />
       {/* <PromoBanner language={language} /> */}
     </div>
   );

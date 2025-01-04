@@ -20,7 +20,7 @@ const LuxuryServices = ({ language = "english" }) => {
   return (
     <div>
       <Helmet>
-        <title>Rukn Al Dyafa - Service</title>
+        <title>Rukn Al Dyafa - Luxury Services & Experiences</title>
         <meta name="description" 
         content="Indulge in exclusive luxury catering services in the UAE. From signature drinks to gourmet treats, we create memorable dining experiences." />
         <meta name="keywords" content="mocktail and cocktail catering UAE, beverage menu options for events UAE, book beverage catering for events UAE, coffee bar catering for events UAE, tea and coffee catering Dubai, fresh juice catering service UAE, luxury catering UAE, signature drinks UAE, premium beverage services" />

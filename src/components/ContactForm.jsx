@@ -49,7 +49,7 @@ const CheckoutPage = ({ language }) => {
     Address: ${formData.address} 
     Message: ${formData.message}`;
 
-    const whatsappUrl = `https://wa.me/+971503665518?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappUrl = `https://wa.me/+917045992776?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -57,7 +57,7 @@ const CheckoutPage = ({ language }) => {
 
   return (
     <div className="flex justify-center pb-6 md:py-6 px-4 items-center min-h-full bg-gray-100" id='Book'>
-      <div className="max-w-6xl w-full bg-white rounded-lg shadow-xl flex flex-col md:flex-row">
+      <div className="max-w-6xl w-full bg-white rounded-lg shadow-lg flex flex-col md:flex-row">
         <div className="w-full md:w-1/2 p-8">
           <h2 className="text-2xl font-semibold mb-6">{t.header}</h2> 
 

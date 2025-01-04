@@ -22,7 +22,7 @@ const AboutSection = ({ language = "english" }) => {
   return (
     <div className="bg-gray-100 min-h-screen" id="ExploreMoment">
       <Helmet>
-        <title>Rukn Al Dyafa - About Us</title> 
+        <title>Rukn Al Dyafa - Experience in Luxury, Weddings & Corporate Events</title> 
         <meta name="description" 
         content="Learn more about our commitment to delivering premium catering and beverage services. We bring elegance and taste to your events in the UAE." />
         <meta name="keywords" content="top-rated beverage catering UAE, best drink catering services in Dubai, luxury catering UAE, premium catering services UAE, beverage services UAE, wedding catering UAE, corporate event catering UAE, catering services in Dubai, bespoke catering services, elegant catering solutions, birthday party catering services UAE, tailored catering UAE" />

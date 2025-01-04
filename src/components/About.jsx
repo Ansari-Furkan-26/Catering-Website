@@ -9,8 +9,8 @@ const cards = [
   {
     img: IMG6,
     title: {
-      english: "Beverage Service Experience", 
-      arabic: "تجربة خدمة المشروبات"
+      english: "Beverage Service Experience for Guests", 
+      arabic: "تجربة خدمة المشروبات للضيوف"
     },
     message: {
       english: "Rukn Al Dyafa serves the finest traditional and international beverages with exceptional service, enhancing the visitor experience at every moment.",
@@ -82,7 +82,7 @@ function About({ language }) {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}>
           <p className="text-gray-600 mb-6">{t.paragraph}</p>
-          <a href="luxury-services">
+          <a href="luxury-hospitality-services">
             <button className="bg-black hover:bg-gray-800 text-white py-2 px-4 rounded-full mb-6 transition-all">
               {t.button}
             </button>

@@ -43,7 +43,7 @@ function Eventpg({ language }) {
   return (
     <div className="bg-gray-100 min-h-screen" id="ExploreMoment">
       <Helmet>
-        <title>Rukn Al Dyafa - Events</title>
+        <title>Rukn Al Dyafa - Premium Event Planning & Management Services in UAE</title>
         <meta name="description" 
         content="From weddings to corporate events, we provide bespoke catering and beverage solutions in the UAE. Tailored to perfection for any occasion."/>
         <meta name="keywords" content="birthday party beverage services UAE, wedding beverage catering Dubai, corporate event drink services UAE, event catering UAE, luxury event drinks catering Dubai, engagement party beverage setup UAE, wedding catering UAE, corporate beverage services" />
@@ -109,7 +109,7 @@ function Eventpg({ language }) {
                 <h3 className="text-xl font-semibold text-gray-900">{event.title[language]}</h3>
                 <p className="text-base text-gray-600 mt-1 line-clamp-2 md:line-clamp-3">{event.description[language]}</p>
               </div>
-              <a href="/luxury-services">
+              <a href="/luxury-hospitality-services">
                 <button className="bg-blue-500 text-white py-2 px-6 rounded-lg self-end mt-4 hover:bg-blue-600 text-sm">
                   {language === 'english' ? 'Savor the Experience' : 'تذوق التجربة'}
                 </button>
